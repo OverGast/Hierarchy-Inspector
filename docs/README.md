@@ -19,5 +19,3 @@ This documentation is the user-facing reference. For source and contribution det
 
 - **New to the asset?** Start with [Getting Started](getting-started.md).
 - **Looking for a specific feature?** Use the sidebar.
-
-> **Sync test:** if you can read this line on GitBook, GitHub → GitBook sync is working.
