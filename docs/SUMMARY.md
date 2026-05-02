@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Hierarchy Inspector](README.md)
+* [Hierarchy Decorator](README.md)
 * [Getting Started](getting-started.md)
 
 ## Features

@@ -1,4 +1,4 @@
-# Hierarchy Inspector
+# Hierarchy Decorator
 
 A Unity Editor extension that enhances the Hierarchy window with native-style toggles, theming, and styling tools.
 
@@ -6,7 +6,7 @@ A Unity Editor extension that enhances the Hierarchy window with native-style to
 
 - `Assets/` — Unity project source for the extension
 - `docs/` — GitBook documentation source
-- `HierarchyInspector.unitypackage` — Distributable package (added on release)
+- `HierarchyDecorator.unitypackage` — Distributable package (added on release)
 
 ## Installation
 
