@@ -10,11 +10,9 @@ namespace FoundFootage.Editor.Hierarchy
     {
         public static event Action OnThemeChanged;
 
-        [Header("Master")]
         [Tooltip("Master switch. When false, the overlay unsubscribes all callbacks and renders nothing.")]
         [SerializeField] private bool enabled = true;
 
-        [Header("Row Visuals")]
         [Tooltip("Alternating row stripe shading.")]
         [SerializeField] private bool alternatingRows = true;
         [Tooltip("Highlight the row under the mouse cursor.")]
@@ -34,31 +32,30 @@ namespace FoundFootage.Editor.Hierarchy
         [Tooltip("Glow effect on selected rows.")]
         [SerializeField] private bool selectedRowGlow = true;
 
-        [Header("Row Visuals - Stripe")]
-        [Tooltip("Base color used for alternating row stripes; combined with stripeAlpha.")]
-        [SerializeField] private Color stripeBaseColor = Color.black;
-        [Tooltip("Opacity of the alternating-row stripe (0 = invisible, 1 = fully opaque).")]
-        [Range(0f, 1f)]
-        [SerializeField] private float stripeAlpha = 0.12f;
+        [Tooltip("Row body color used on even rows when Unity's editor is set to the dark skin.")]
+        [SerializeField] private Color rowColorDarkPrimary = new Color(0.220f, 0.220f, 0.220f, 1f);
+        [Tooltip("Row body color used on odd (alternating) rows when Unity's editor is set to the dark skin.")]
+        [SerializeField] private Color rowColorDarkSecondary = new Color(0.255f, 0.255f, 0.255f, 1f);
 
-        [Header("Row Visuals - Inactive Dim")]
+        [Tooltip("Row body color used on even rows when Unity's editor is set to the light skin.")]
+        [SerializeField] private Color rowColorLightPrimary = new Color(0.760f, 0.760f, 0.760f, 1f);
+        [Tooltip("Row body color used on odd (alternating) rows when Unity's editor is set to the light skin.")]
+        [SerializeField] private Color rowColorLightSecondary = new Color(0.715f, 0.715f, 0.715f, 1f);
+
         [Tooltip("Multiplier applied to row colors when the GameObject is inactive (0 = fully dimmed, 1 = no dim).")]
         [Range(0f, 1f)]
         [SerializeField] private float inactiveDimAlpha = 0.4f;
 
-        [Header("Selection")]
         [Tooltip("Row body color used when the hierarchy window has keyboard focus.")]
         [SerializeField] private Color selectionColorFocused = new Color(0.172f, 0.365f, 0.529f, 1f);
         [Tooltip("Row body color used when the hierarchy window does not have keyboard focus.")]
         [SerializeField] private Color selectionColorUnfocused = new Color(0.30f, 0.30f, 0.30f, 1f);
 
-        [Header("Tree Lines")]
         [Tooltip("Draw connector lines between parent and child rows.")]
         [SerializeField] private bool treeLines = true;
         [Tooltip("Color of the tree connector lines drawn between parent and child rows.")]
         [SerializeField] private Color treeLineColor = new Color(0.35f, 0.35f, 0.35f);
 
-        [Header("Components")]
         [Tooltip("Show component icons in the row gutter.")]
         [SerializeField] private bool componentIcons = true;
         [Tooltip("Maximum component icons to render per row.")]
@@ -72,7 +69,6 @@ namespace FoundFootage.Editor.Hierarchy
         [Tooltip("Tint component icons with the row's custom color.")]
         [SerializeField] private bool iconTinting = false;
 
-        [Header("Status Indicators")]
         [Tooltip("Auto-tint prefab instance rows.")]
         [SerializeField] private bool prefabTinting = true;
         [Tooltip("Show a dot indicator next to prefab instances that have unsaved overrides.")]
@@ -91,7 +87,6 @@ namespace FoundFootage.Editor.Hierarchy
         [Tooltip("Color of the prefab override dot drawn next to the GameObject icon.")]
         [SerializeField] private Color prefabOverrideDotColor = new Color(0.3f, 0.6f, 1.0f, 1f);
 
-        [Header("Customization")]
         [Tooltip("Allow per-object styling via the gear popup.")]
         [SerializeField] private bool perObjectStyling = true;
         [Tooltip("Auto-style rows that contain only child objects (treat as folders).")]
@@ -106,7 +101,6 @@ namespace FoundFootage.Editor.Hierarchy
         [Tooltip("Drag to paint a color across multiple rows.")]
         [SerializeField] private bool dragToColor = true;
 
-        [Header("Animations")]
         [Tooltip("Slight indent animation when the row is hovered.")]
         [SerializeField] private bool hoverSlide = true;
         [Tooltip("Fade-in animation for newly created GameObjects.")]
@@ -114,7 +108,6 @@ namespace FoundFootage.Editor.Hierarchy
         [Tooltip("Brief flash when a GameObject is renamed.")]
         [SerializeField] private bool renameFlash = true;
 
-        [Header("Chrome Tints")]
         [Tooltip("Tint color applied to the foldout arrow drawn on top of the row body.")]
         [SerializeField] private Color foldoutArrowColor = new Color(0.85f, 0.85f, 0.85f, 1f);
         [Tooltip("Tint color applied to the per-object settings (gear) icon.")]
@@ -132,8 +125,16 @@ namespace FoundFootage.Editor.Hierarchy
         public bool DepthShadow => depthShadow;
         public bool SelectedRowGlow => selectedRowGlow;
 
-        public Color StripeBaseColor => stripeBaseColor;
-        public float StripeAlpha => stripeAlpha;
+        public Color RowColorDarkPrimary => rowColorDarkPrimary;
+        public Color RowColorDarkSecondary => rowColorDarkSecondary;
+        public Color RowColorLightPrimary => rowColorLightPrimary;
+        public Color RowColorLightSecondary => rowColorLightSecondary;
+
+        public Color RowColorPrimary =>
+            UnityEditor.EditorGUIUtility.isProSkin ? rowColorDarkPrimary : rowColorLightPrimary;
+        public Color RowColorSecondary =>
+            UnityEditor.EditorGUIUtility.isProSkin ? rowColorDarkSecondary : rowColorLightSecondary;
+
         public float InactiveDimAlpha => inactiveDimAlpha;
 
         public Color SelectionColorFocused => selectionColorFocused;
