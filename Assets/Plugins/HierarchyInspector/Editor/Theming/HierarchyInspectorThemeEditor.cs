@@ -87,7 +87,10 @@ namespace FoundFootage.Editor.Hierarchy
             DrawTopAccentStrip();
             DrawHeaderBar();
             DrawMasterRow();
+            EditorGUILayout.Space(8f);     // breathing room between header area and tabs
+
             DrawTabBar();
+            EditorGUILayout.Space(8f);     // breathing room between tabs and the first section
 
             // Sections gate on master "enabled". Tab bar stays interactive so the
             // user can still browse tabs while the overlay is off.
@@ -333,7 +336,7 @@ namespace FoundFootage.Editor.Hierarchy
                 if (!string.IsNullOrEmpty(section.Help))
                     EditorGUILayout.HelpBox(section.Help, MessageType.Info);
             }
-            EditorGUILayout.Space(2f);
+            EditorGUILayout.Space(6f);     // gap between foldout sections
         }
 
         private static bool DrawSectionHeader(string title, int count, bool open)
