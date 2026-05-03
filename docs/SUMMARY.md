@@ -5,11 +5,15 @@
 
 ## Features
 
-* [Native Toggles](features/native-toggles.md)
-* [Theming](features/theming.md)
-* [Style Clipboard](features/style-clipboard.md)
+* [The Gear Popup](features/gear-popup.md)
+* [Virtualization Folders](features/folders.md)
+* [Bookmarks](features/bookmarks.md)
+* [Copy & Paste Style](features/style-clipboard.md)
+* [Themes & Preferences](features/themes.md)
 
-## Reference
+## Theme Reference
 
-* [Settings](reference/settings.md)
-* [API](reference/api.md)
+* [Rows Tab](theme/rows.md)
+* [Icons Tab](theme/icons.md)
+* [Indicators Tab](theme/indicators.md)
+* [Customization Tab](theme/customization.md)
