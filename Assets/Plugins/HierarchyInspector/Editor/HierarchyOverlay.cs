@@ -1106,8 +1106,6 @@ namespace FoundFootage.Editor.Hierarchy
             DrawComponentIcons(info, data, selectionRect, isRepaint);
             DrawSettingsGear(go, data, selectionRect, isRepaint);
             DrawStrippedComponentsWarning(go, data, selectionRect, isRepaint);
-            // fullRowRect lets the drag start anywhere on the row, not just over the label.
-            HierarchyStyleClipboard.ProcessDragToColor(go, fullRowRect, data);
 
             if (isRepaint)
             {

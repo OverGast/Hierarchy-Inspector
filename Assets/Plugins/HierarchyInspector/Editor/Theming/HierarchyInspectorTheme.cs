@@ -98,8 +98,6 @@ namespace FoundFootage.Editor.Hierarchy
         [SerializeField] private float mainIconSize = 16f;
         [Tooltip("Show the eye/lock active toggle column.")]
         [SerializeField] private bool activeToggle = true;
-        [Tooltip("Drag to paint a color across multiple rows.")]
-        [SerializeField] private bool dragToColor = true;
 
         [Tooltip("Slight indent animation when the row is hovered.")]
         [SerializeField] private bool hoverSlide = true;
@@ -165,7 +163,6 @@ namespace FoundFootage.Editor.Hierarchy
         public bool UseMainComponentIcon => useMainComponentIcon;
         public float MainIconSize => mainIconSize;
         public bool ActiveToggle => activeToggle;
-        public bool DragToColor => dragToColor;
 
         public bool HoverSlide => hoverSlide;
         public bool FadeInAnimation => fadeInAnimation;

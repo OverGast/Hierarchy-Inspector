@@ -4,7 +4,7 @@ using UnityEditor;
 
 namespace FoundFootage.Editor.Hierarchy
 {
-    /// <summary>Copy/paste of hierarchy styling plus alt-drag color painting.</summary>
+    /// <summary>Copy/paste of hierarchy styling.</summary>
     public static class HierarchyStyleClipboard
     {
         private struct StyleData
@@ -82,54 +82,6 @@ namespace FoundFootage.Editor.Hierarchy
 
         /// <summary>Whether there's a valid style in the clipboard.</summary>
         public static bool HasClipboard => _clipboard.isValid;
-
-        private static bool _isDragging;
-        private static Color _dragColor;
-        private static int _dragUndoGroup;
-
-        // cachedData is the per-row HierarchyInspectorData from the dispatcher; avoids a per-event GetComponent marshal.
-        public static void ProcessDragToColor(GameObject go, Rect selectionRect, HierarchyInspectorData cachedData)
-        {
-            if (!HierarchyThemeProvider.Active.DragToColor) return;
-
-            var evt = Event.current;
-
-            if (evt.type == EventType.MouseDown && evt.button == 0 && evt.alt && selectionRect.Contains(evt.mousePosition))
-            {
-                if (cachedData != null && cachedData.UseCustomColor)
-                {
-                    _isDragging = true;
-                    _dragColor = cachedData.BackgroundColor;
-                    _dragUndoGroup = Undo.GetCurrentGroup();
-                    Undo.SetCurrentGroupName("Drag Color");
-                    evt.Use();
-                }
-            }
-            else if (evt.type == EventType.MouseDrag && _isDragging && selectionRect.Contains(evt.mousePosition))
-            {
-                var data = cachedData;
-
-                if (data != null && data.UseCustomColor &&
-                    Mathf.Abs(data.BackgroundColor.r - _dragColor.r) < 0.01f &&
-                    Mathf.Abs(data.BackgroundColor.g - _dragColor.g) < 0.01f &&
-                    Mathf.Abs(data.BackgroundColor.b - _dragColor.b) < 0.01f)
-                    return;
-
-                if (data == null)
-                {
-                    data = Undo.AddComponent<HierarchyInspectorData>(go);
-                    data.hideFlags = HideFlags.HideInInspector | HideFlags.DontSaveInBuild;
-                }
-                Undo.RecordObject(data, "Drag Color");
-                data.SetCustomColor(true, _dragColor);
-                HierarchyOverlay.InvalidateItem(go);
-            }
-            else if (evt.type == EventType.MouseUp && _isDragging)
-            {
-                _isDragging = false;
-                Undo.CollapseUndoOperations(_dragUndoGroup);
-            }
-        }
 
         // Ctrl/Cmd+Shift+C copy, Ctrl/Cmd+Shift+V paste.
         public static void ProcessKeyboardShortcuts()

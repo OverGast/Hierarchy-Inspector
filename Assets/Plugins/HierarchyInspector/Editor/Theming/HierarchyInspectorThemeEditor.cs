@@ -85,7 +85,7 @@ namespace FoundFootage.Editor.Hierarchy
             serializedObject.Update();
 
             DrawTopAccentStrip();
-            DrawHeader();
+            DrawHeaderBar();
             DrawMasterRow();
             DrawTabBar();
 
@@ -164,7 +164,7 @@ namespace FoundFootage.Editor.Hierarchy
             EditorGUI.DrawRect(r, AccentBlue);
         }
 
-        private void DrawHeader()
+        private void DrawHeaderBar()
         {
             var enabledProp = serializedObject.FindProperty("enabled");
             bool overlayOn = enabledProp == null || enabledProp.boolValue;
@@ -625,9 +625,6 @@ namespace FoundFootage.Editor.Hierarchy
                             {
                                 F("perObjectStyling", "Per-Object Styling",
                                     "Allow individual GameObjects to be styled via the gear popup."),
-                                F("dragToColor", "Drag to Color",
-                                    "Drag across rows to paint a color across multiple GameObjects at once.",
-                                    dependsOn: "perObjectStyling"),
                                 F("folderStyling", "Folder Styling",
                                     "Auto-style rows that contain only child objects (treat as folders).",
                                     dependsOn: "perObjectStyling"),
@@ -647,7 +644,7 @@ namespace FoundFootage.Editor.Hierarchy
                                 F("iconTinting", "Tint Icons with Row Color",
                                     "Tint component icons with the row's custom color when one is set."),
                             },
-                            Help = "Effects in this section only apply to rows that have a custom color set via the gear popup or drag-to-color."
+                            Help = "Effects in this section only apply to rows that have a custom color set via the gear popup."
                         },
                         new Section
                         {
