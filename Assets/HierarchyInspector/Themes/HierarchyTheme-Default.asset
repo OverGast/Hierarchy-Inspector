@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6071829304a5b6c7d8e9f, type: 3}
+  m_Name: HierarchyTheme-Default
+  m_EditorClassIdentifier: FoundFootage.Editor::FoundFootage.Editor.Hierarchy.HierarchyTheme
+  enabled: 1
+  alternatingRows: 1
+  rowHover: 1
+  rowBorders: 1
+  inactiveDimming: 1
+  gradientBackground: 1
+  leftColorStripe: 1
+  accentLine: 1
+  depthShadow: 1
+  selectedRowGlow: 1
+  rowColorDarkPrimary: {r: 0.17735851, g: 0.17735851, b: 0.17735851, a: 1}
+  rowColorDarkSecondary: {r: 0.21509439, g: 0.21509439, b: 0.21509439, a: 1}
+  rowColorLightPrimary: {r: 0.76, g: 0.76, b: 0.76, a: 1}
+  rowColorLightSecondary: {r: 0.715, g: 0.715, b: 0.715, a: 1}
+  inactiveDimAlpha: 0.37
+  selectionColorFocused: {r: 0.172, g: 0.365, b: 0.529, a: 0.3529412}
+  selectionColorUnfocused: {r: 0.3, g: 0.3, b: 0.3, a: 1}
+  treeLines: 1
+  treeLineColor: {r: 0.35, g: 0.35, b: 0.35, a: 1}
+  componentIcons: 1
+  maxIcons: 5
+  iconSize: 10
+  iconGlow: 1
+  componentQuickToggle: 1
+  iconTinting: 0
+  prefabTinting: 1
+  prefabOverrideDot: 1
+  missingScriptWarning: 1
+  missingReferences: 1
+  separatorDetection: 1
+  prefabTintColor: {r: 0, g: 0.39829862, b: 1, a: 1}
+  missingScriptTintColor: {r: 0.8, g: 0.2, b: 0.2, a: 1}
+  prefabOverrideDotColor: {r: 0.3, g: 0.6, b: 1, a: 1}
+  perObjectStyling: 1
+  folderStyling: 1
+  useMainComponentIcon: 1
+  mainIconSize: 12
+  activeToggle: 1
+  hoverSlide: 1
+  fadeInAnimation: 1
+  renameFlash: 1
+  foldoutArrowColor: {r: 1, g: 1, b: 1, a: 1}
+  gearIconColor: {r: 1, g: 1, b: 1, a: 1}

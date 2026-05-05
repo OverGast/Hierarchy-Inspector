@@ -1,0 +1,14 @@
+{
+    "name": "SpaceWhale.HierarchyInspector.Runtime",
+    "rootNamespace": "SpaceWhale.HierarchyInspector",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
