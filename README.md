@@ -4,7 +4,7 @@ A Unity Editor extension that turns the Hierarchy window into a workspace: row v
 
 ## Documentation
 
-Full user documentation lives on GitBook. The source is in [`docs/`](docs/).
+Full user documentation is published at [space-whale-2.gitbook.io/space-whale-docs](https://space-whale-2.gitbook.io/space-whale-docs). The markdown source is in [`docs/`](docs/).
 
 ## Repo layout
 

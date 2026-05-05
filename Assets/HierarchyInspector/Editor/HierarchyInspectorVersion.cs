@@ -6,8 +6,7 @@ namespace SpaceWhale.HierarchyInspector.Editor
     {
         public const string Version = "1.0.0";
 
-        // TODO: replace with the live GitBook URL once the space is published.
-        public const string DocumentationUrl = "https://hierarchy-inspector.gitbook.io/hierarchy-inspector";
+        public const string DocumentationUrl = "https://space-whale-2.gitbook.io/space-whale-docs";
     }
 }
 #endif
