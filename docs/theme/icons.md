@@ -14,7 +14,7 @@ The component icons are the small icons drawn in the right gutter of each row. T
 | **Max Icons per Row** | How many icons can stack in the gutter before extras are hidden. The most-recently-added components win. |
 | **Icon Size** | Pixel size of each icon. Larger icons are easier to click but take more horizontal space. |
 | **Glow on Hover** | When you hover the cursor over an icon, it brightens. A small but useful affordance. |
-| **Click to Toggle** | Lets you click an icon to flip that component's `enabled` flag without selecting the GameObject first. Right-click on an icon opens a context menu for it. |
+| **Click to Toggle** | Lets you click an icon to flip that component's `enabled` flag without selecting the GameObject first. Only components that derive from `Behaviour` (i.e. those with an `enabled` flag) are toggleable; structural components like Transform and MeshFilter ignore the click. |
 
 {% hint style="info" %}
 **The Transform component is never shown in the gutter.** Every GameObject has one, so it would just be noise. The first non-Transform component is the one used for the "main component icon" feature on the GameObject icon.

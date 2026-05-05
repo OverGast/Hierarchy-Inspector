@@ -7,15 +7,15 @@ Bookmarks let you mark important GameObjects and jump to them from a per-scene m
 ## Bookmarking a GameObject
 
 1. Click the gear icon on the row.
-2. Click the **Bookmark** button.
+2. Click the star button (`☆` empty / `★` filled) at the bottom of the popup.
 
-A small star badge appears on the row to confirm the bookmark. Click **Bookmark** in the popup again to remove it.
+A small star badge appears on the row to confirm the bookmark. Click the star again to remove it.
 
 ## Jumping to a bookmark
 
-Right-click anywhere in the Hierarchy window. The context menu includes a **Bookmarks** submenu listing every bookmarked GameObject in the active scene. Pick one to select and frame it.
+Each scene's header row in the Hierarchy gets a small gold star button on the right side. Click it to open a menu listing every bookmarked GameObject in that scene. Pick one to select and frame it.
 
-The list is grouped by scene, so working in a multi-scene setup is fine; each scene has its own bookmarks.
+Each scene has its own button and its own bookmark list, so multi-scene setups work cleanly.
 
 ## Behavior details
 
@@ -29,4 +29,4 @@ The list is grouped by scene, so working in a multi-scene setup is fine; each sc
 
 ## Removing all bookmarks
 
-There is no "clear all bookmarks" button. Open the gear popup on each bookmarked object and click **Bookmark** again to remove individually, or click **Clear** to wipe all customization on that GameObject.
+There is no "clear all bookmarks" button. Open the gear popup on each bookmarked object and click the star button again to remove individually, or click **Clear** to wipe all customization on that GameObject.

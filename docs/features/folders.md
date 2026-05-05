@@ -64,6 +64,6 @@ Scene Root
 **Don't put scripts on folder GameObjects.** Folders are intended to be empty containers. If you put a script on a folder, that script will be destroyed along with the folder at build time. The included `HierarchyFolderConflictMonitor` will warn you in the Inspector if it detects this case.
 {% endhint %}
 
-- **Folders work in play mode** by default. The strip happens during build only, not when you press Play. If you want a folder-free play mode hierarchy, see the theme settings.
+- **Folders are intact in play mode.** The strip only runs during a player build (when Unity invokes `IProcessSceneWithReport` with a non-null `BuildReport`). Press Play in the editor and your folder GameObjects stay where they are.
 - **Prefabs as folders work too.** You can mark a prefab instance as a folder; the strip will still process it correctly at build.
 - **Renaming a folder is fine.** The folder's name doesn't affect anything; rename freely.

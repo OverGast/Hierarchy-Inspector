@@ -35,9 +35,9 @@ If none of this is happening, check that the active theme is selected: open **Ed
 | Switch themes, create a new theme, reset to defaults | **Edit → Preferences → Hierarchy Inspector** |
 | Edit a theme's colors, sizes, and feature toggles | Select the theme asset; the Inspector is fully tabbed |
 | Change one GameObject's color, icon, name, notes | Click the **gear icon** on the row in the Hierarchy |
-| Mark a GameObject as a folder | Gear popup, then the Folder button |
-| Bookmark a GameObject | Gear popup, then the Bookmark button |
-| Jump to a bookmark | Right-click anywhere in the Hierarchy window for the **Bookmarks** menu |
+| Mark a GameObject as a folder | Gear popup, then the **Virtualized Folder** button |
+| Bookmark a GameObject | Gear popup, then the star button (`☆` / `★`) |
+| Jump to a bookmark | Click the gold star button on the scene's header row in the Hierarchy |
 | Copy/paste a row's styling | `Ctrl+Shift+C` to copy the selected row, `Ctrl+Shift+V` to paste |
 
 ## Turning the overlay off

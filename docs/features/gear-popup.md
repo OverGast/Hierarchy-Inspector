@@ -14,31 +14,31 @@ The popup is divided into named sections.
 
 ### Color
 
-Eight preset colors plus a "no color" option. Click a swatch to apply that color to the row. The selected swatch shows a thicker outline. Choose **None** (the leftmost option) to remove a color you previously set.
+Eight preset colors. Click a swatch to apply that color to the row; the selected swatch shows a thicker outline. Once a color is set, an **X** button appears at the right of the row, which clears the color.
 
 The eight presets are tuned to read clearly against both dark and light editor skins.
 
 ### Icon
 
-Replaces the GameObject's hierarchy icon with a built-in choice. Browse a curated palette of icons that ship with Hierarchy Inspector (folders, gear, eye, bookmark, etc.). Click an icon to apply it; click it again to clear.
+Replaces the GameObject's hierarchy icon with a built-in choice. Browse a curated palette of icons that ship with Hierarchy Inspector (folders, gear, eye, bookmark, etc.). Click an icon to apply it. Once an icon is set, an **X** button appears at the right of the icon row, which clears it.
 
-If the curated set isn't enough, the **Project Icon** picker below it accepts any `Texture2D` from your project. Drag a texture in or use the object field. This is great for tagging objects with a logo or category icon you have already authored.
+If the curated set isn't enough, the **Custom Icon** field below it accepts any `Texture2D` from your project. Drag a texture in or use the object field. This is great for tagging objects with a logo or category icon you have already authored.
 
 {% hint style="info" %}
 **Icons override the default hierarchy icon, including the "use main component icon" theme behavior.** A row with a custom icon set always shows that icon.
 {% endhint %}
 
-### Folder / Bookmark / Clear
+### Virtualized Folder / Bookmark / Clear
 
 Three action buttons:
 
-- **Folder.** Marks this GameObject as a virtualization folder. Folders look like folders in the hierarchy and get stripped at build time. See [Virtualization Folders](folders.md) for the full story.
-- **Bookmark.** Adds this GameObject to the per-scene bookmark list. A small star badge appears on the row. Click again to unbookmark. See [Bookmarks](bookmarks.md).
+- **Virtualized Folder.** Marks this GameObject as a virtualization folder. Folders look like folders in the hierarchy and get stripped at build time. See [Virtualization Folders](folders.md) for the full story. The first time you mark a GameObject as a folder, the popup also assigns the default folder icon and a yellow row color (these stay editable; the auto-assignment is a convenience, not a lock-in).
+- **Bookmark** (the small star button: `☆` empty / `★` filled). Adds this GameObject to its scene's bookmark list. A small star badge appears on the row. Click again to unbookmark. See [Bookmarks](bookmarks.md).
 - **Clear.** Removes all customization (color, icon, notes, folder/bookmark flags) and removes the underlying `HierarchyInspectorData` component from the GameObject.
 
 ### Notes
 
-A free-form text field. Anything you type here is stored on the GameObject and shows as a tooltip when you hover the row. Useful for "this object is referenced from script X" or "remember to bake before shipping" reminders.
+A free-form text field. Anything you type here is stored on the GameObject and is visible whenever you re-open the gear popup on that object. Useful for "this object is referenced from script X" or "remember to bake before shipping" reminders. Notes are NOT shown as tooltips in the hierarchy itself; they live in the popup.
 
 ## Multi-select editing
 
