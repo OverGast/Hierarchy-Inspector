@@ -25,7 +25,7 @@ Open any scene. The Hierarchy window will already look different:
 If none of this is happening, check that the active theme is selected: open **Edit → Preferences → Hierarchy Inspector** and pick a theme asset. A default one ships with the package.
 
 {% hint style="info" %}
-**The first time you click the gear** on a GameObject, Hierarchy Inspector adds a small `HierarchyInspectorData` component to it. This component is invisible in the Inspector by default and is only present on objects you have actually styled. Untouched objects stay clean.
+**The first time you click the gear** on a GameObject, Hierarchy Inspector adds a small `HierarchyInspectorData` component to it. This component is invisible in the Inspector by default, only present on objects you have actually styled, and **automatically stripped from player builds** (it carries Unity's `DontSaveInBuild` flag). Untouched objects stay clean; built objects ship clean.
 {% endhint %}
 
 ## Finding the controls
