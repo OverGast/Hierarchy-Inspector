@@ -15,5 +15,5 @@ First public release. Includes:
 - Style clipboard: copy and paste color, icon, and folder state with `Ctrl+Shift+C` / `Ctrl+Shift+V`.
 - Indicators: prefab tinting, override dot, missing-script highlight, missing-reference indicator, separator detection (auto-detected from `---Section---` naming).
 - Animations: hover slide, fade-in on create, rename flash.
-- Theme system: a `ScriptableObject` per theme; switch between themes per-user via Edit → Preferences → Hierarchy Inspector. The theme inspector provides a 4-tab editor (Rows, Icons, Indicators, Customization) with show_if dependent fields.
+- Theme system: a `ScriptableObject` per theme; switch between themes per-user via Edit → Preferences → Hierarchy Inspector. The theme inspector provides a 4-tab editor (Rows, Icons, Indicators, Customization) with show_if dependent fields. Ships with four bundled themes: Default, HighContrast, Minimal, and Vibrant.
 - Welcome window on first import, accessible later via Tools → Hierarchy Inspector → Welcome.

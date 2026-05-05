@@ -45,16 +45,27 @@ At the very top of the theme inspector is the **Overlay Enabled** toggle. Turn i
 A status pill in the header shows the current state at a glance: green "● ENABLED" or red "● DISABLED".
 
 
+## Bundled themes
+
+Hierarchy Inspector ships with four ready-to-use themes in `Assets/HierarchyInspector/Themes/`:
+
+- **HierarchyTheme-Default.** A balanced setup with all features on at moderate intensity. The active theme out of the box.
+- **HierarchyTheme-HighContrast.** Stronger row contrast, brighter selection (yellow), thicker depth shadows, more visible tree lines. For accessibility, sunlit displays, or large hierarchies that need to read at a glance.
+- **HierarchyTheme-Minimal.** Most decorations off (no row alternation, no tree lines, no animations, no component icons in the gutter, no prefab tinting). Keeps the essentials: hover, selection, missing-script highlight, override dot. For users who want the per-object styling features without the visual noise.
+- **HierarchyTheme-Vibrant.** Saturated palette, magenta selection, warm accent line, icon tinting follows row color. For colorful project styles or fun/casual game projects.
+
+Switch between them in **Edit → Preferences → Hierarchy Inspector** by dragging a different theme asset into the **Theme Asset** field.
+
 ## Creating a new theme
 
-If you want a second theme (for example, a high-contrast version, or one with no animations for performance work):
+If none of the bundled themes fit, make your own:
 
 1. Open **Edit → Preferences → Hierarchy Inspector**.
-2. Click **Create New Theme**. A new theme asset appears in `Assets/Editor/Themes/Hierarchy/` and becomes active.
+2. Click **Create New Theme**. A new theme asset appears in `Assets/HierarchyInspector/Themes/` and becomes active.
 3. Edit the new theme's settings as you want.
-4. Switch back to the old theme any time by dragging it into the Theme Asset field.
+4. Switch back to any theme by dragging it into the **Theme Asset** field.
 
-You can also duplicate any theme asset in the Project window (Ctrl+D) to fork an existing configuration.
+You can also duplicate any theme asset in the Project window (`Ctrl+D`) to fork an existing configuration.
 
 {% hint style="info" %}
 **Theme assets travel with the project.** Anyone who pulls the project gets the same themes. The user's *active* selection is the only thing that's per-user.
