@@ -8,10 +8,6 @@ Full user documentation lives on GitBook. The source is in [`docs/`](docs/).
 
 ## Repo layout
 
-- `Assets/Plugins/HierarchyInspector/` houses the runtime data component, the editor overlay, the theme assets, and the demo scene builder.
+- `Assets/HierarchyInspector/` houses the runtime data component, the editor overlay, the theme assets, and the demo scene.
 - `docs/` is the GitBook source (markdown + assets).
 - `.gitbook.yaml` configures the GitBook GitHub Sync.
-
-## License
-
-_TBD_
