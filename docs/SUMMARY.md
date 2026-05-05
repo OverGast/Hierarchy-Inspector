@@ -17,3 +17,7 @@
 * [Icons Tab](theme/icons.md)
 * [Indicators Tab](theme/indicators.md)
 * [Customization Tab](theme/customization.md)
+
+***
+
+* [Support](support.md)
