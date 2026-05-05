@@ -71,6 +71,9 @@ namespace SpaceWhale.HierarchyInspector.Editor
         private static readonly GUIContent s_overlayLabel = new GUIContent(
             "Overlay Enabled",
             "Master switch. When off, the overlay unsubscribes its callbacks and renders nothing — Unity's stock hierarchy is shown.");
+        private static GUIContent s_docsButton; // lazily filled with the Unity built-in help icon
+
+        private static GUIStyle s_versionStyle;
 
         private void OnEnable()
         {
@@ -155,6 +158,16 @@ namespace SpaceWhale.HierarchyInspector.Editor
                 fontSize = 12,
             };
             s_masterLabelStyle.normal.textColor = new Color(0.92f, 0.92f, 0.92f);
+
+            s_versionStyle = new GUIStyle(EditorStyles.miniLabel)
+            {
+                fontSize = 9,
+            };
+            s_versionStyle.normal.textColor = new Color(0.50f, 0.50f, 0.50f);
+
+            s_docsButton = new GUIContent(
+                EditorGUIUtility.IconContent("_Help").image,
+                "Open the Hierarchy Inspector documentation in your browser.");
         }
 
         // ═══ CHROME DRAWING ═══════════════════════════════════════════════════
@@ -174,16 +187,18 @@ namespace SpaceWhale.HierarchyInspector.Editor
 
             // Painted background — flat rather than CSS-style gradient (IMGUI gradients
             // cost significantly more for negligible visual gain at this scale).
-            var bgRect = GUILayoutUtility.GetRect(0, 30, GUILayout.ExpandWidth(true));
+            // 36px tall to fit a title + version subtitle stack on the left.
+            var bgRect = GUILayoutUtility.GetRect(0, 36, GUILayout.ExpandWidth(true));
             EditorGUI.DrawRect(bgRect, PickSkin(HeaderBg, new Color(0.78f, 0.78f, 0.78f)));
             DrawHairline(bgRect, bottom: true);
 
             // Inner content rect (padded).
             var inner = new Rect(bgRect.x + 10, bgRect.y + 4, bgRect.width - 20, bgRect.height - 8);
 
-            // Reset button (right-aligned).
+            // Reset button (right-aligned, vertically centered).
             const float btnW = 130f;
-            var btnRect = new Rect(inner.xMax - btnW, inner.y + 1, btnW, 20f);
+            const float btnH = 20f;
+            var btnRect = new Rect(inner.xMax - btnW, bgRect.y + (bgRect.height - btnH) * 0.5f, btnW, btnH);
             if (GUI.Button(btnRect, s_resetButton))
             {
                 foreach (var t in targets)
@@ -199,14 +214,31 @@ namespace SpaceWhale.HierarchyInspector.Editor
                 GUIUtility.ExitGUI();
             }
 
-            // Status pill (just left of the button).
+            // Status pill (just left of the Reset button, vertically centered).
             const float pillW = 92f;
-            var pillRect = new Rect(btnRect.x - pillW - 8, inner.y + 2, pillW, 18f);
+            const float pillH = 18f;
+            var pillRect = new Rect(btnRect.x - pillW - 8, bgRect.y + (bgRect.height - pillH) * 0.5f, pillW, pillH);
             DrawStatusPill(pillRect, overlayOn);
 
-            // Title (fills remaining space on the left).
-            var titleRect = new Rect(inner.x, inner.y, pillRect.x - inner.x - 8, inner.height);
+            // Title (top line on the left). The width budget reserves room for the
+            // small Documentation icon button drawn just to the right of the text.
+            const float docsBtnW = 22f;
+            float titleW = pillRect.x - inner.x - 8 - docsBtnW - 4;
+            var titleRect = new Rect(inner.x, bgRect.y + 4, titleW, 16);
             GUI.Label(titleRect, "Hierarchy Inspector Theme", EditorStyles.boldLabel);
+
+            // Documentation icon button right of the title (vertically aligned with the title line).
+            var titleSize = EditorStyles.boldLabel.CalcSize(new GUIContent("Hierarchy Inspector Theme"));
+            float titleEndX = Mathf.Min(inner.x + titleSize.x + 2, titleRect.xMax);
+            var docsBtnRect = new Rect(titleEndX, bgRect.y + 4, docsBtnW, 16);
+            if (GUI.Button(docsBtnRect, s_docsButton, EditorStyles.iconButton))
+            {
+                Application.OpenURL(HierarchyInspectorVersion.DocumentationUrl);
+            }
+
+            // Version subtitle (bottom line on the left).
+            var versionRect = new Rect(inner.x, bgRect.y + 20, titleW + docsBtnW, 12);
+            GUI.Label(versionRect, "v" + HierarchyInspectorVersion.Version, s_versionStyle);
         }
 
         private static void DrawStatusPill(Rect rect, bool on)
