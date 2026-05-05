@@ -2,7 +2,7 @@
 
 The **Icons** tab controls anything icon-shaped: the gutter of component icons on each row, the GameObject's primary icon, and tints applied to UI chrome.
 
-> 📷 **[SCREENSHOT: The Icons tab open in the theme inspector, showing the 3 sections: Component Icons, GameObject Icon, UI Tints.]**
+![Theme inspector with the Icons tab open](../.gitbook/assets/theme-icons/01-tab-open.png)
 
 ## Component Icons
 

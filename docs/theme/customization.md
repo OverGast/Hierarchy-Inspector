@@ -2,7 +2,7 @@
 
 The **Customization** tab controls user-driven coloring (the gear popup), color effects on rows that have a custom color, the optional active-toggle column, and animations.
 
-> 📷 **[SCREENSHOT: The Customization tab open in the theme inspector, showing the 4 sections: Per-Object Styling, Color Effects, Toolbar, Animations.]**
+![Theme inspector with the Customization tab open](../.gitbook/assets/theme-customization/01-tab-open.png)
 
 ## Per-Object Styling
 

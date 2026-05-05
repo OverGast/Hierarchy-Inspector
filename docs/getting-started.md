@@ -20,7 +20,7 @@ Open any scene. The Hierarchy window will already look different:
 - Each row has component icons in the right gutter.
 - A small gear button appears next to the row label when you hover.
 
-> 📷 **[SCREENSHOT: A standard Unity hierarchy with Hierarchy Inspector enabled, showing alternating rows, a gear button visible on the hovered row, and component icons in the gutter.]**
+![Demo scene hierarchy with the gear button visible on the hovered row](.gitbook/assets/getting-started/02-first-look.png)
 
 If none of this is happening, check that the active theme is selected: open **Edit → Preferences → Hierarchy Inspector** and pick a theme asset. A default one ships with the package.
 

@@ -6,7 +6,7 @@ A **theme** is a `ScriptableObject` asset that holds every setting Hierarchy Ins
 
 Open **Edit → Preferences → Hierarchy Inspector**. This is the per-user settings pane.
 
-> 📷 **[SCREENSHOT: Unity's Preferences window with the Hierarchy Inspector section selected on the left sidebar, and the right panel showing the Active Theme picker, action buttons, and the embedded theme inspector below.]**
+![Unity Preferences with the Hierarchy Inspector pane open](../.gitbook/assets/themes/02-preferences-pane.png)
 
 The pane has:
 
@@ -24,8 +24,6 @@ You can edit a theme two ways:
 2. **Selecting the asset directly.** Find the theme in the Project window, click it, and the Inspector shows the same tabbed editor.
 
 Both routes are equivalent; pick whichever flow fits your hands. Either way, **changes update every open Hierarchy window in real-time**. There is no "Apply" button. The overlay re-reads settings on every paint.
-
-> 📷 **[SCREENSHOT: The full theme inspector with the Rows tab open, showing the 4-tab bar, accent strip at top, and the section foldouts for Background, Effects, Inactive State, and Selection.]**
 
 ## The theme inspector at a glance
 

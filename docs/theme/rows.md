@@ -2,7 +2,7 @@
 
 The **Rows** tab controls everything that draws on every row in the hierarchy: backgrounds, scan-improvement effects, the inactive-state look, and selection.
 
-> 📷 **[SCREENSHOT: The Rows tab open in the theme inspector, showing all 4 sections expanded: Background, Effects, Inactive State, Selection.]**
+![Theme inspector with the Rows tab open and all sections expanded](../.gitbook/assets/theme-rows/01-all-sections-expanded.png)
 
 ## Background
 

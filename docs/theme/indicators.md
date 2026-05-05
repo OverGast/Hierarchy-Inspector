@@ -2,7 +2,7 @@
 
 The **Indicators** tab controls the semantic flags drawn on rows: prefab tints, override dots, missing-script highlights, missing-reference indicators, and separator detection.
 
-> 📷 **[SCREENSHOT: The Indicators tab open in the theme inspector, showing the 3 sections: Prefabs, Warnings, Separators.]**
+![Theme inspector with the Indicators tab open](../.gitbook/assets/theme-indicators/01-tab-open.png)
 
 These are all visual cues to help you spot problem rows or special rows at a glance.
 

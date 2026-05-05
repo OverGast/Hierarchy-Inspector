@@ -2,7 +2,7 @@
 
 Virtualization folders are a way to group GameObjects in the Hierarchy purely for organization. They look like folders, behave like folders, and disappear at build time so they cost nothing in your shipped game.
 
-> 📷 **[SCREENSHOT: Hierarchy showing two virtualization folders ("Lighting" and "Cameras") containing several GameObjects each, with the folder rows visually styled differently from regular GameObjects.]**
+![Hierarchy with virtualization folders containing several GameObjects](../.gitbook/assets/folders/01-folders-in-hierarchy.png)
 
 ## The problem they solve
 

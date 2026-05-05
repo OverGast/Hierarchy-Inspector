@@ -4,7 +4,7 @@ description: A Unity Editor extension that turns the Hierarchy window into a wor
 
 # Hierarchy Inspector
 
-> 📷 **[SCREENSHOT: Side-by-side comparison. Left half shows Unity's stock Hierarchy window with a sample scene. Right half shows the same scene with Hierarchy Inspector enabled, featuring colored rows, component icons, prefab tints, and a virtualization folder.]**
+![Hierarchy Inspector applied to a Unity scene](.gitbook/assets/hero.png)
 
 Hierarchy Inspector is a drop-in editor extension that takes Unity's flat Hierarchy window and turns it into something you can actually navigate. It draws on top of every row, lets you tag and color GameObjects, organizes scenes with build-stripped folders, bookmarks frequently-edited objects, and copies styles between rows in a click.
 

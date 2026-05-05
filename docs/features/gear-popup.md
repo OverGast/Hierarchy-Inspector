@@ -2,6 +2,8 @@
 
 The gear popup is where you customize one GameObject (or a multi-selection) without leaving the Hierarchy window. It opens from a small gear icon that appears on each row.
 
+![The gear popup floating over a hierarchy row](../.gitbook/assets/gear-popup/01-gear-popup.png)
+
 ## Opening it
 
 Hover over a row in the Hierarchy. A gear icon appears next to the GameObject's icon. Click it to open the popup. To customize multiple GameObjects at once, **select them in the hierarchy first** (Ctrl/Cmd-click or Shift-click) and then click the gear on any of the selected rows. The popup will show "N objects selected" at the top and apply edits to all of them.

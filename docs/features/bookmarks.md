@@ -2,7 +2,7 @@
 
 Bookmarks let you mark important GameObjects and jump to them from a per-scene menu. Useful for the player, the main camera, the UI canvas, the level director, or anything else you find yourself selecting all the time.
 
-> 📷 **[SCREENSHOT: Hierarchy with three bookmarked GameObjects visible, each showing a small star badge in the corner of the row.]**
+![Bookmarked GameObjects with star badges visible on their rows](../.gitbook/assets/bookmarks/01-bookmarked-rows.png)
 
 ## Bookmarking a GameObject
 
