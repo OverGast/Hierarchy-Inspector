@@ -79,6 +79,11 @@ crashlytics-build.properties
 # Note: docs/.gitbook/assets/ IS tracked — image uploads from GitBook live there.
 node_modules/
 
+# Unity-supplied UPM packages that get embedded into Packages/ by some tools.
+# Asset Store Tools, in particular, embeds itself rather than living in PackageCache.
+# Keep manifest.json and packages-lock.json (they record the dependency); skip the rest.
+/Packages/com.unity.asset-store-tools/
+
 # OS
 .DS_Store
 Thumbs.db
