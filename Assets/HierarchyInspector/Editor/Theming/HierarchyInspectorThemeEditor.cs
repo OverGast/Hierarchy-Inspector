@@ -70,7 +70,7 @@ namespace SpaceWhale.HierarchyInspector.Editor
             "Restore every field on this theme to its built-in default value.");
         private static readonly GUIContent s_overlayLabel = new GUIContent(
             "Overlay Enabled",
-            "Master switch. When off, the overlay unsubscribes its callbacks and renders nothing — Unity's stock hierarchy is shown.");
+            "Master switch. When off, the overlay unsubscribes its callbacks and renders nothing; Unity's stock hierarchy is shown.");
         private static GUIContent s_docsButton; // lazily filled with the Unity built-in help icon
 
         private static GUIStyle s_versionStyle;
