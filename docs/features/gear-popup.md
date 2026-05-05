@@ -18,7 +18,7 @@ The eight presets are tuned to read clearly against both dark and light editor s
 
 ### Icon
 
-Replaces the GameObject's hierarchy icon with a built-in choice. Browse a curated palette of icons that ship with Hierarchy Decorator (folders, gear, eye, bookmark, etc.). Click an icon to apply it; click it again to clear.
+Replaces the GameObject's hierarchy icon with a built-in choice. Browse a curated palette of icons that ship with Hierarchy Inspector (folders, gear, eye, bookmark, etc.). Click an icon to apply it; click it again to clear.
 
 If the curated set isn't enough, the **Project Icon** picker below it accepts any `Texture2D` from your project. Drag a texture in or use the object field. This is great for tagging objects with a logo or category icon you have already authored.
 

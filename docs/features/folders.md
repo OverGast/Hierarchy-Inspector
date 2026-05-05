@@ -22,7 +22,7 @@ To unmark something as a folder, click the gear and press **Folder** again. To r
 
 ## Build behavior
 
-Hierarchy Decorator hooks Unity's `IProcessSceneWithReport` callback. When you build a player, every folder in every scene is processed in this order:
+Hierarchy Inspector hooks Unity's `IProcessSceneWithReport` callback. When you build a player, every folder in every scene is processed in this order:
 
 1. Find all folders in the scene, deepest-nested first.
 2. Move each folder's children up to the folder's parent (or scene root if the folder was a root object).

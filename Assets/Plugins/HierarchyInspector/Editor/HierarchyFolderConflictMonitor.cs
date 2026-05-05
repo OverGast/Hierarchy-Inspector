@@ -73,7 +73,7 @@ namespace FoundFootage.Editor.Hierarchy
             {
                 string list = HierarchyFolderValidation.FormatComponentList(_scratchBuffer);
                 Debug.LogError(
-                    $"[Hierarchy Decorator] Virtualized folder '{go.name}' has components " +
+                    $"[Hierarchy Inspector] Virtualized folder '{go.name}' has components " +
                     $"that will be silently stripped at build time: {list}. Move them to " +
                     "a child GameObject or remove the Virtualized Folder marker.",
                     go);

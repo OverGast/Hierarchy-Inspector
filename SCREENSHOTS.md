@@ -4,7 +4,7 @@ The 10 screenshots referenced from the GitBook docs, with capture instructions.
 
 ## How to use this guide
 
-1. Build the demo scene: **Tools → Hierarchy Decorator → Build Demo Scene** (one-time).
+1. Build the demo scene: **Tools → Hierarchy Inspector → Build Demo Scene** (one-time).
 2. Set Unity to the **dark editor skin** so colors match the docs (Edit → Preferences → General → Editor Theme → Dark).
 3. Resize the Hierarchy / Inspector windows to **~340 pixels wide** for the typical capture composition.
 4. Take the screenshots below, saving each as `docs/.gitbook/assets/<path>` per the file column.
@@ -33,11 +33,11 @@ PNG, transparent background not required (Unity's editor bg is fine).
 
 | ID | File | Source page | What to capture |
 | --- | --- | --- | --- |
-| 1 | `hero.png` | README | Side-by-side: stock Unity hierarchy on the left, Hierarchy Decorator on the right, both showing the demo scene. To capture the "stock" half, temporarily uncheck Overlay Enabled, screenshot, re-enable, screenshot the right half, combine in an image editor. Aim for ~600px wide each panel. |
+| 1 | `hero.png` | README | Side-by-side: stock Unity hierarchy on the left, Hierarchy Inspector on the right, both showing the demo scene. To capture the "stock" half, temporarily uncheck Overlay Enabled, screenshot, re-enable, screenshot the right half, combine in an image editor. Aim for ~600px wide each panel. |
 | 2 | `getting-started/02-first-look.png` | Getting Started | The demo scene Hierarchy, mouse hovering over one row so the gear button is visible on it. Crop tight to ~6-8 rows. |
 | 3 | `folders/01-folders-in-hierarchy.png` | Virtualization Folders | The demo scene with both the **Lighting** and **Cameras** folders expanded so their contents are visible. Make sure the folder rows look clearly distinct from regular GameObjects. |
 | 4 | `bookmarks/01-bookmarked-rows.png` | Bookmarks | Section of the demo scene showing 2-3 bookmarked rows with their star badges visible. Sun and Main Camera are bookmarked; expand the Lighting and Cameras folders to show both. |
-| 5 | `themes/02-preferences-pane.png` | Themes & Preferences | Edit → Preferences → Hierarchy Decorator pane. Frame the full Preferences window so the left sidebar (Hierarchy Decorator selected) and the right panel (Active Theme picker, Create New / Reveal Asset / Reset buttons, embedded inspector) are all visible. |
+| 5 | `themes/02-preferences-pane.png` | Themes & Preferences | Edit → Preferences → Hierarchy Inspector pane. Frame the full Preferences window so the left sidebar (Hierarchy Inspector selected) and the right panel (Active Theme picker, Create New / Reveal Asset / Reset buttons, embedded inspector) are all visible. |
 | 6 | `themes/03-rows-tab-open.png` | Themes & Preferences | The full theme inspector with the Rows tab active and all 4 sections expanded. Tear the Inspector tab out into a floating window for less visual clutter. Frame top-to-bottom. |
 | 7 | `theme-rows/01-all-sections-expanded.png` | Theme Reference: Rows Tab | Same as #6, but cropped to just the tab content (no Unity tab bar above it). |
 | 8 | `theme-icons/01-tab-open.png` | Theme Reference: Icons Tab | Theme inspector with the **Icons** tab active and all 3 sections (Component Icons, GameObject Icon, UI Tints) expanded. Crop to tab content. |

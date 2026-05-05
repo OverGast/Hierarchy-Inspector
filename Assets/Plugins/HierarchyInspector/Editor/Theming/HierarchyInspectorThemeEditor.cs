@@ -206,7 +206,7 @@ namespace FoundFootage.Editor.Hierarchy
 
             // Title (fills remaining space on the left).
             var titleRect = new Rect(inner.x, inner.y, pillRect.x - inner.x - 8, inner.height);
-            GUI.Label(titleRect, "Hierarchy Decorator Theme", EditorStyles.boldLabel);
+            GUI.Label(titleRect, "Hierarchy Inspector Theme", EditorStyles.boldLabel);
         }
 
         private static void DrawStatusPill(Rect rect, bool on)

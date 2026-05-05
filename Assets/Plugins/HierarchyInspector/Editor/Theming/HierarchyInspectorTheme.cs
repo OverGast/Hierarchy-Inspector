@@ -5,7 +5,7 @@ using UnityEngine;
 namespace FoundFootage.Editor.Hierarchy
 {
     /// <summary>ScriptableObject holding all hierarchy overlay configuration.</summary>
-    [CreateAssetMenu(fileName = "HierarchyTheme", menuName = "Tools/Hierarchy Decorator/Theme", order = 101)]
+    [CreateAssetMenu(fileName = "HierarchyTheme", menuName = "Tools/Hierarchy Inspector/Theme", order = 101)]
     public class HierarchyInspectorTheme : ScriptableObject
     {
         public static event Action OnThemeChanged;

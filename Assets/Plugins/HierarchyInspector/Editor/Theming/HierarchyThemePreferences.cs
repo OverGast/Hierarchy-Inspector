@@ -8,7 +8,7 @@ namespace FoundFootage.Editor.Hierarchy
     /// <summary>Per-user Preferences pane for picking the active <see cref="HierarchyInspectorTheme"/>.</summary>
     internal static class HierarchyThemePreferences
     {
-        private const string PreferencesPath = "Preferences/Hierarchy Decorator";
+        private const string PreferencesPath = "Preferences/Hierarchy Inspector";
         private const string DefaultThemeFolder = "Assets/Editor/Themes/Hierarchy";
 
         [SettingsProvider]
@@ -16,9 +16,9 @@ namespace FoundFootage.Editor.Hierarchy
         {
             return new SettingsProvider(PreferencesPath, SettingsScope.User)
             {
-                label = "Hierarchy Decorator",
+                label = "Hierarchy Inspector",
                 guiHandler = _ => DrawGUI(),
-                keywords = new[] { "hierarchy", "decorator", "theme", "editor", "tree", "stripes" }
+                keywords = new[] { "hierarchy", "inspector", "theme", "editor", "tree", "stripes" }
             };
         }
 
@@ -48,7 +48,7 @@ namespace FoundFootage.Editor.Hierarchy
 
                     if (GUILayout.Button("Reset to Defaults", GUILayout.Width(140)))
                     {
-                        Undo.RecordObject(current, "Reset Hierarchy Decorator Theme");
+                        Undo.RecordObject(current, "Reset Hierarchy Inspector Theme");
                         current.ResetToDefaults();
                         EditorUtility.SetDirty(current);
                         AssetDatabase.SaveAssetIfDirty(current);

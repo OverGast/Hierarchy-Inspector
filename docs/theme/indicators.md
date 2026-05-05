@@ -39,5 +39,5 @@ A small organizational feature for keeping a long hierarchy readable.
 | --- | --- |
 | **Auto-Detect Separators** | Treats GameObjects whose name matches the pattern `---Section---` (or similar dash-wrapped patterns) as visual dividers. The row is rendered as a thick horizontal divider with the inner text as a section label. |
 
-This is a community convention many Unity developers already use; Hierarchy Decorator just makes it look intentional instead of like a regular GameObject with an unusual name.
+This is a community convention many Unity developers already use; Hierarchy Inspector just makes it look intentional instead of like a regular GameObject with an unusual name.
 

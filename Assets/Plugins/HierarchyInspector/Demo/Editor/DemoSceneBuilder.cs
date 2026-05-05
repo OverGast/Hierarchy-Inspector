@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Builds the Hierarchy Decorator demo scene programmatically. Used to populate a
+/// Builds the Hierarchy Inspector demo scene programmatically. Used to populate a
 /// known-good hierarchy for documentation screenshots without manual setup.
 /// </summary>
 internal static class DemoSceneBuilder
@@ -21,7 +21,7 @@ internal static class DemoSceneBuilder
     private static readonly Color GreenPlayer  = new Color(0.40f, 0.75f, 0.35f);
     private static readonly Color RedHighlight = new Color(0.85f, 0.30f, 0.30f);
 
-    [MenuItem("Tools/Hierarchy Decorator/Build Demo Scene")]
+    [MenuItem("Tools/Hierarchy Inspector/Build Demo Scene")]
     public static void BuildDemoScene()
     {
         if (!Directory.Exists(DemoFolder))

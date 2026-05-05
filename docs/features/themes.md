@@ -1,12 +1,12 @@
 # Themes & Preferences
 
-A **theme** is a `ScriptableObject` asset that holds every setting Hierarchy Decorator uses to draw the hierarchy. You can have multiple themes in your project and switch between them per-user. The default install ships one theme to get you started.
+A **theme** is a `ScriptableObject` asset that holds every setting Hierarchy Inspector uses to draw the hierarchy. You can have multiple themes in your project and switch between them per-user. The default install ships one theme to get you started.
 
 ## The Preferences pane
 
-Open **Edit → Preferences → Hierarchy Decorator**. This is the per-user settings pane.
+Open **Edit → Preferences → Hierarchy Inspector**. This is the per-user settings pane.
 
-> 📷 **[SCREENSHOT: Unity's Preferences window with the Hierarchy Decorator section selected on the left sidebar, and the right panel showing the Active Theme picker, action buttons, and the embedded theme inspector below.]**
+> 📷 **[SCREENSHOT: Unity's Preferences window with the Hierarchy Inspector section selected on the left sidebar, and the right panel showing the Active Theme picker, action buttons, and the embedded theme inspector below.]**
 
 The pane has:
 
@@ -42,7 +42,7 @@ Each tab is divided into named sections (foldouts). Settings inside a section ar
 
 ## The master toggle
 
-At the very top of the theme inspector is the **Overlay Enabled** toggle. Turn it off to disable Hierarchy Decorator entirely; you see Unity's stock hierarchy until you re-enable. This is a master switch above every other setting.
+At the very top of the theme inspector is the **Overlay Enabled** toggle. Turn it off to disable Hierarchy Inspector entirely; you see Unity's stock hierarchy until you re-enable. This is a master switch above every other setting.
 
 A status pill in the header shows the current state at a glance: green "● ENABLED" or red "● DISABLED".
 
@@ -51,7 +51,7 @@ A status pill in the header shows the current state at a glance: green "● ENAB
 
 If you want a second theme (for example, a high-contrast version, or one with no animations for performance work):
 
-1. Open **Edit → Preferences → Hierarchy Decorator**.
+1. Open **Edit → Preferences → Hierarchy Inspector**.
 2. Click **Create New Theme**. A new theme asset appears in `Assets/Editor/Themes/Hierarchy/` and becomes active.
 3. Edit the new theme's settings as you want.
 4. Switch back to the old theme any time by dragging it into the Theme Asset field.
