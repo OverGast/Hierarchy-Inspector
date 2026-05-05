@@ -13,8 +13,6 @@ This is the master switch for everything driven by the gear popup: color, icon, 
 | **Per-Object Styling** | Master toggle. When off, the gear button doesn't show and per-object data isn't read. Hides all customization at once without losing it. |
 | **Folder Styling** | When on, virtualization folders get extra visual treatment (folder-style row body, folder icon if no other icon is set). Only takes effect when Per-Object Styling is on. |
 
-> 📷 **[SCREENSHOT: Hierarchy with Per-Object Styling toggled off, showing the gear button absent from rows. And a second screenshot with it on, gear visible on hover.]**
-
 ## Color Effects
 
 These four toggles only affect rows that **already have a custom color set** via the gear popup. They control how that color renders.
@@ -25,8 +23,6 @@ These four toggles only affect rows that **already have a custom color set** via
 | **Left Color Stripe** | Draws a thin colored bar on the very left edge of colored rows. Subtle, leaves the row body untouched, useful when you want a hint of the color without flooding the row. |
 | **Accent Line** | Draws a thin accent line at the bottom of colored rows. Like a paragraph rule under the row. Combine with Gradient or Stripe for layered emphasis. |
 | **Tint Icons with Row Color** | Component icons in the gutter get tinted to match the row's custom color. Loud but striking; off by default. |
-
-> 📷 **[SCREENSHOT: Three colored rows demonstrating the three styles side by side: one with a full color flood, one with gradient fade, one with just a left stripe. All three are clearly in different visual styles.]**
 
 {% hint style="info" %}
 **Mix and match.** All four effects can run at once. A common combination is **Left Color Stripe + Tint Icons**: a small color hint plus icon-tinting catches the eye without dominating the row.
@@ -40,8 +36,6 @@ A single setting controlling an extra column of toggles in the hierarchy.
 | --- | --- |
 | **Active Toggle Column** | Adds an eye/lock toggle column on the right side of every row, so you can flip a GameObject's `activeSelf` flag with one click without expanding the row's component icons or selecting it first. |
 
-> 📷 **[SCREENSHOT: Hierarchy with the Active Toggle Column visible on the right side of every row. Two rows show the toggle in its "off" state (lock or hidden eye), the rest in "on" (open eye).]**
-
 ## Animations
 
 Three subtle animations to soften visual transitions.
@@ -51,8 +45,6 @@ Three subtle animations to soften visual transitions.
 | **Hover Slide** | When you hover a row, it shifts slightly to the right. Adds physicality to the hover state. |
 | **Fade In on Create** | Newly-created GameObjects fade in over a fraction of a second instead of popping into existence. Helps you spot what just appeared in a busy hierarchy. |
 | **Rename Flash** | A brief color flash highlights a row when its GameObject is renamed. Catches your eye on the row that changed. |
-
-> 📷 **[SCREENSHOT: Hard to convey animation in a screenshot, so use a 2-frame composite: (1) A GameObject mid-rename, (2) the row immediately after with the rename flash visible as a soft highlight.]**
 
 {% hint style="info" %}
 **Animations are very subtle by default.** They are designed to stay below the threshold of distraction; you should notice them only when you're looking for them. If they bother you, turn them off here.

@@ -30,5 +30,3 @@ Everything lives in the Editor only. Nothing ships in your build except the smal
 ## Compatibility
 
 Built against Unity 6 (6000.0+). The extension uses public APIs only and avoids reflection into Unity internals.
-
-> 📷 **[SCREENSHOT: A populated scene hierarchy showing several feature combos: alternating row stripes, two prefab-tinted rows, a virtualization folder collapsed, a bookmarked GameObject with its star badge, and a row with a missing-script warning highlight.]**

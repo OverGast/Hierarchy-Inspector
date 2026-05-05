@@ -11,13 +11,9 @@ Bookmarks let you mark important GameObjects and jump to them from a per-scene m
 
 A small star badge appears on the row to confirm the bookmark. Click **Bookmark** in the popup again to remove it.
 
-> 📷 **[SCREENSHOT: Close-up of a hierarchy row with a star badge in the corner, plus the gear popup beside it showing the Bookmark button highlighted.]**
-
 ## Jumping to a bookmark
 
 Right-click anywhere in the Hierarchy window. The context menu includes a **Bookmarks** submenu listing every bookmarked GameObject in the active scene. Pick one to select and frame it.
-
-> 📷 **[SCREENSHOT: Hierarchy right-click context menu open with the "Bookmarks" submenu expanded, showing a list of bookmarked GameObject names.]**
 
 The list is grouped by scene, so working in a multi-scene setup is fine; each scene has its own bookmarks.
 

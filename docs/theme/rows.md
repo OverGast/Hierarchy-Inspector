@@ -14,8 +14,6 @@ The **Rows** tab controls everything that draws on every row in the hierarchy: b
 
 Two sets of colors are stored, one for Unity's dark editor skin and one for the light skin. The active set is picked automatically based on **Edit → Preferences → General → Editor Theme**.
 
-> 📷 **[SCREENSHOT: A hierarchy with Alternating Rows on, clearly showing the two-tone pattern across maybe 8 rows.]**
-
 ## Effects
 
 | Setting | Effect |
@@ -25,8 +23,6 @@ Two sets of colors are stored, one for Unity's dark editor skin and one for the 
 | **Depth Shadow** | A soft shadow is drawn at the left edge of each nesting level so depth reads at a glance, even on flat color rows. |
 | **Tree Lines** | Connector lines drawn between parent and child rows, like a file tree. |
 | **Tree Line Color** | The color of the tree connector lines. Only takes effect when Tree Lines is on. |
-
-> 📷 **[SCREENSHOT: A hierarchy showing tree lines drawn between a parent and several nested children, with depth shadows visible at each indentation level.]**
 
 ## Inactive State
 
@@ -39,8 +35,6 @@ GameObjects that are disabled in the hierarchy can be visually de-emphasized.
 
 The default value (around 0.4) is a good balance: inactive rows are clearly de-emphasized but still readable.
 
-> 📷 **[SCREENSHOT: Hierarchy with a mix of active and disabled GameObjects, showing the dim effect with the disabled rows clearly faded.]**
-
 ## Selection
 
 How selected rows look. Unity's hierarchy distinguishes between **focused** and **unfocused** selection (the keyboard focus is in the Hierarchy vs. somewhere else like the Scene view).
@@ -51,4 +45,3 @@ How selected rows look. Unity's hierarchy distinguishes between **focused** and 
 | **Unfocused Color** | Row body color when the Hierarchy doesn't have focus. Usually a quieter gray so it doesn't compete with the Scene view. |
 | **Selected Row Glow** | Adds a soft glow at the bottom edge of the selected row. Subtle, but makes the selected row pop without changing the body color. |
 
-> 📷 **[SCREENSHOT: Two side-by-side hierarchies. (1) Hierarchy in focus, the selected row uses the loud focused color. (2) Same scene with the Scene view focused, the selected row uses the quieter unfocused color.]**

@@ -11,8 +11,6 @@ Once you have styled one GameObject the way you like (color, icon, folder flag),
 
 The shortcuts are scoped to the Hierarchy window. They only fire when the Hierarchy has keyboard focus.
 
-> 📷 **[SCREENSHOT: Two-step composite. (1) A styled GameObject (red color, custom folder icon) selected with Ctrl+Shift+C visualised. (2) Three other GameObjects selected, then Ctrl+Shift+V applied, showing all three now share the same color and icon.]**
-
 ## What gets copied
 
 The clipboard captures:

@@ -2,8 +2,6 @@
 
 A **theme** is a `ScriptableObject` asset that holds every setting Hierarchy Decorator uses to draw the hierarchy. You can have multiple themes in your project and switch between them per-user. The default install ships one theme to get you started.
 
-> 📷 **[SCREENSHOT: The Project window showing the default HierarchyTheme asset and the Inspector showing its tabbed editor open in the background.]**
-
 ## The Preferences pane
 
 Open **Edit → Preferences → Hierarchy Decorator**. This is the per-user settings pane.
@@ -42,15 +40,12 @@ The inspector is organized into **4 tabs**:
 
 Each tab is divided into named sections (foldouts). Settings inside a section are usually a parent toggle followed by detail fields. When you turn off a parent toggle, the detail fields gray out and indent so you can see they exist but are not currently in effect. This is **show_if** behavior; the detail fields stay visible for discovery, they just become read-only until you re-enable the parent.
 
-> 📷 **[SCREENSHOT: Close-up of the Component Icons section in the Icons tab, showing the parent "Show Component Icons" toggle ON in one screenshot and OFF in another. In the OFF screenshot, the 4 detail fields below it are clearly indented and grayed out.]**
-
 ## The master toggle
 
 At the very top of the theme inspector is the **Overlay Enabled** toggle. Turn it off to disable Hierarchy Decorator entirely; you see Unity's stock hierarchy until you re-enable. This is a master switch above every other setting.
 
 A status pill in the header shows the current state at a glance: green "● ENABLED" or red "● DISABLED".
 
-> 📷 **[SCREENSHOT: The header bar of the theme inspector showing the title "Hierarchy Decorator Theme" on the left, the green ENABLED pill in the middle-right, and the Reset to Defaults button on the right.]**
 
 ## Creating a new theme
 

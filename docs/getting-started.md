@@ -10,8 +10,6 @@ This page covers installation, the first thing you should see, and how to find e
 
 After import, the asset lives at `Assets/Plugins/HierarchyInspector/`. Move it anywhere you like; nothing depends on the path.
 
-> 📷 **[SCREENSHOT: Unity's Import Unity Package dialog with the Hierarchy Decorator contents listed.]**
-
 ## First look
 
 Open any scene. The Hierarchy window will already look different:
@@ -45,5 +43,3 @@ If none of this is happening, check that the active theme is selected: open **Ed
 ## Turning the overlay off
 
 If you want to compare against Unity's stock hierarchy or temporarily disable everything, open the active theme asset and uncheck **Overlay Enabled** at the top. The custom rendering shuts off, all callbacks unsubscribe, and you see Unity's default hierarchy. Re-check it to bring everything back. No restart needed.
-
-> 📷 **[SCREENSHOT: The theme inspector's master toggle row showing the green "● ENABLED" status pill on the right, and a second screenshot with the toggle off showing the red "● DISABLED" pill.]**

@@ -2,13 +2,9 @@
 
 The gear popup is where you customize one GameObject (or a multi-selection) without leaving the Hierarchy window. It opens from a small gear icon that appears on each row.
 
-> 📷 **[SCREENSHOT: A hierarchy row with the mouse hovering over it. The gear icon is highlighted on the right side of the row, just before the component icons.]**
-
 ## Opening it
 
 Hover over a row in the Hierarchy. A gear icon appears next to the GameObject's icon. Click it to open the popup. To customize multiple GameObjects at once, **select them in the hierarchy first** (Ctrl/Cmd-click or Shift-click) and then click the gear on any of the selected rows. The popup will show "N objects selected" at the top and apply edits to all of them.
-
-> 📷 **[SCREENSHOT: The gear popup open over a hierarchy, fully expanded, showing all sections: Color, Icon, Folder/Bookmark/Clear buttons, and the Notes field.]**
 
 ## What's in the popup
 
@@ -18,8 +14,6 @@ The popup is divided into named sections.
 
 Eight preset colors plus a "no color" option. Click a swatch to apply that color to the row. The selected swatch shows a thicker outline. Choose **None** (the leftmost option) to remove a color you previously set.
 
-> 📷 **[SCREENSHOT: Close-up of the Color row in the popup, showing the 8 preset chips with one selected (highlighted outline) and the None chip.]**
-
 The eight presets are tuned to read clearly against both dark and light editor skins.
 
 ### Icon
@@ -27,8 +21,6 @@ The eight presets are tuned to read clearly against both dark and light editor s
 Replaces the GameObject's hierarchy icon with a built-in choice. Browse a curated palette of icons that ship with Hierarchy Decorator (folders, gear, eye, bookmark, etc.). Click an icon to apply it; click it again to clear.
 
 If the curated set isn't enough, the **Project Icon** picker below it accepts any `Texture2D` from your project. Drag a texture in or use the object field. This is great for tagging objects with a logo or category icon you have already authored.
-
-> 📷 **[SCREENSHOT: The Icon section open, showing the rows of built-in icons with one selected, plus the Project Icon picker below it with a custom texture chosen.]**
 
 {% hint style="info" %}
 **Icons override the default hierarchy icon, including the "use main component icon" theme behavior.** A row with a custom icon set always shows that icon.
@@ -45,8 +37,6 @@ Three action buttons:
 ### Notes
 
 A free-form text field. Anything you type here is stored on the GameObject and shows as a tooltip when you hover the row. Useful for "this object is referenced from script X" or "remember to bake before shipping" reminders.
-
-> 📷 **[SCREENSHOT: The Notes field with a few lines of example text typed in, plus a separate screenshot of a hierarchy row showing the tooltip popup with the same notes when hovered.]**
 
 ## Multi-select editing
 

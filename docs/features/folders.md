@@ -20,8 +20,6 @@ The row instantly changes to look like a folder: a folder icon, a folder-styled 
 
 To unmark something as a folder, click the gear and press **Folder** again. To remove all customization including the folder flag, use **Clear**.
 
-> 📷 **[SCREENSHOT: Step-by-step composite. (1) Newly-created empty GameObject. (2) Gear popup open with cursor on the Folder button. (3) The same row after, now styled as a folder.]**
-
 ## Build behavior
 
 Hierarchy Decorator hooks Unity's `IProcessSceneWithReport` callback. When you build a player, every folder in every scene is processed in this order:
@@ -65,8 +63,6 @@ Scene Root
 {% hint style="warning" %}
 **Don't put scripts on folder GameObjects.** Folders are intended to be empty containers. If you put a script on a folder, that script will be destroyed along with the folder at build time. The included `HierarchyFolderConflictMonitor` will warn you in the Inspector if it detects this case.
 {% endhint %}
-
-> 📷 **[SCREENSHOT: A folder GameObject with a Rigidbody accidentally attached to it. The Inspector shows the conflict warning helpbox flagging the issue and suggesting either removing the component or unmarking the folder.]**
 
 - **Folders work in play mode** by default. The strip happens during build only, not when you press Play. If you want a folder-free play mode hierarchy, see the theme settings.
 - **Prefabs as folders work too.** You can mark a prefab instance as a folder; the strip will still process it correctly at build.
