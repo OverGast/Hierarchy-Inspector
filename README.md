@@ -22,5 +22,5 @@ Full user documentation is published at [space-whale-2.gitbook.io/space-whale-do
 
 Two channels:
 
-- **Open a ticket** on this repository: [github.com/OverGast/Hierarchy-Inspector/issues](https://github.com/OverGast/Hierarchy-Inspector/issues). Best for reproducible bugs and concrete feature requests; keeps the conversation searchable for future buyers.
+- **Open a ticket** on this repository: [github.com/OverGast/Hierarchy-Inspector/issues](https://github.com/OverGast/Hierarchy-Inspector/issues). Best for reproducible bugs and concrete feature requests.
 - **Email** [spacewhale.assets@gmail.com](mailto:spacewhale.assets@gmail.com) for license questions, account or purchase issues, or anything you'd rather not discuss in public.
