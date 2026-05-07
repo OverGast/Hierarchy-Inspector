@@ -58,14 +58,16 @@ Switch between them in **Edit → Preferences → Hierarchy Inspector** by dragg
 
 ## Creating a new theme
 
-If none of the bundled themes fit, make your own:
+If none of the bundled themes fit, make your own. Two ways:
 
-1. Open **Edit → Preferences → Hierarchy Inspector**.
-2. Click **Create New Theme**. A new theme asset appears in `Assets/HierarchyInspector/Themes/` and becomes active.
-3. Edit the new theme's settings as you want.
-4. Switch back to any theme by dragging it into the **Theme Asset** field.
+- **From Preferences.** Open **Edit → Preferences → Hierarchy Inspector** and click **Create New Theme**. A new theme asset appears in `Assets/HierarchyInspector/Themes/` and becomes active automatically.
+- **From the Project window.** Right-click any folder in your project and choose **Create → Tools → Hierarchy Inspector → Theme**. A new theme asset is created at that location with default values; drag it into the **Theme Asset** field in Preferences to activate it.
 
-You can also duplicate any theme asset in the Project window (`Ctrl+D`) to fork an existing configuration.
+Either way, edit the new theme's settings as you want, then switch back to any other theme later by dragging it into the **Theme Asset** field. You can also duplicate any existing theme asset with `Ctrl+D` to fork its configuration.
+
+{% hint style="info" %}
+**If you installed Hierarchy Inspector via Unity Package Manager** (git URL or OpenUPM), the bundled themes ship inside the package under `Packages/` and are read-only. To customize, create a new theme using either method above ; new themes always land in your project's `Assets/` folder where they are fully editable.
+{% endhint %}
 
 {% hint style="info" %}
 **Theme assets travel with the project.** Anyone who pulls the project gets the same themes. The user's *active* selection is the only thing that's per-user.

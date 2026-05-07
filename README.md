@@ -8,22 +8,7 @@ Hierarchy Inspector ships on the **Unity Asset Store**. The package is currently
 
 > [Buy on the Asset Store →](https://assetstore.unity.com/) *(coming soon)*
 
-## Install via Unity Package Manager (UPM)
-
-You can also install Hierarchy Inspector directly from this repository through Unity's Package Manager:
-
-1. In Unity, open `Window → Package Manager`.
-2. Click the `+` button in the top-left and choose `Add package from git URL`.
-3. Paste:
-   ```
-   https://github.com/OverGast/Hierarchy-Inspector.git?path=Assets/HierarchyInspector
-   ```
-4. To pin to a specific release, append a tag, for example:
-   ```
-   https://github.com/OverGast/Hierarchy-Inspector.git?path=Assets/HierarchyInspector#v1.0.0
-   ```
-
-Updates can be pulled later by re-opening the package in the manager and clicking `Update`.
+A `.unitypackage` is also attached to each [GitHub Release](https://github.com/OverGast/Hierarchy-Inspector/releases) for users who want to evaluate or install outside the Asset Store. Download the latest release, then drag the `.unitypackage` into your project.
 
 ## Documentation
 
