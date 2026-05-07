@@ -68,12 +68,24 @@ namespace SpaceWhale.HierarchyInspector.Editor
                 }
             }
 
+            // Fallback: prefer themes that live under Assets/ over those in Packages/,
+            // so users on UPM installs do not silently end up with a read-only theme
+            // selected when their stored EditorPrefs reference is missing.
             var guids = AssetDatabase.FindAssets("t:HierarchyInspectorTheme");
             if (guids != null && guids.Length > 0)
             {
-                string path = AssetDatabase.GUIDToAssetPath(guids[0]);
-                var asset = AssetDatabase.LoadAssetAtPath<HierarchyInspectorTheme>(path);
-                if (asset != null) return asset;
+                HierarchyInspectorTheme firstAny = null;
+                for (int i = 0; i < guids.Length; i++)
+                {
+                    string path = AssetDatabase.GUIDToAssetPath(guids[i]);
+                    if (string.IsNullOrEmpty(path)) continue;
+                    var asset = AssetDatabase.LoadAssetAtPath<HierarchyInspectorTheme>(path);
+                    if (asset == null) continue;
+                    if (path.StartsWith("Assets/", System.StringComparison.Ordinal))
+                        return asset;
+                    if (firstAny == null) firstAny = asset;
+                }
+                if (firstAny != null) return firstAny;
             }
 
             if (_inMemoryDefault == null)
