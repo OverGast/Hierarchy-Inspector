@@ -7,8 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ## [1.0.1]: UPM install path
 
 - Added a `package.json` so Hierarchy Inspector can be installed via Unity Package Manager using a git URL (`https://github.com/OverGast/Hierarchy-Inspector.git?path=Assets/HierarchyInspector`).
-- Welcome window now copies the bundled themes into `Assets/HierarchyInspector/Themes/` on first import when running from a UPM install, so theme assets are editable in the user's project regardless of install path. Asset Store (`.unitypackage`) installs are unaffected (no copy is performed).
+- On first load, the welcome flow now copies the four bundled themes from the package into `Assets/HierarchyInspector/Themes/` and switches the active theme to the writable Default copy. Asset Store (`.unitypackage`) installs are unaffected (no copy is performed). The bootstrap is gated on the actual filesystem state (does Assets/ already contain a theme?) rather than an EditorPrefs flag, so it is self-healing across upgrades, re-installs, and stale per-machine prefs ; users upgrading from v1.0.0 get themes copied automatically on the next domain reload.
 - "Open Demo Scene" now resolves the demo scene by GUID, so it works under both `Assets/` and `Packages/` install layouts.
+- The active-theme fallback (used when no theme is selected in EditorPrefs or the stored reference is stale) now prefers themes that live under `Assets/` over those under `Packages/`, so UPM users do not silently end up with a read-only theme selected when an editable copy exists.
+- Repo housekeeping: `*.unitypackage` builds are no longer committed to the repository; they ship as GitHub Release assets only.
 
 ## [1.0.0]: Initial release
 
