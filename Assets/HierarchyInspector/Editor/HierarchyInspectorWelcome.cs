@@ -17,6 +17,10 @@ namespace SpaceWhale.HierarchyInspector.Editor
     internal sealed class HierarchyInspectorWelcome : EditorWindow
     {
         private const string ShownPrefKey = "SpaceWhale.HierarchyInspector.Welcome.Shown";
+        // Separate from ShownPrefKey so users upgrading from a build without the
+        // bootstrap (e.g. v1.0.0) still get themes copied on next reload, even
+        // though they have already dismissed the welcome window.
+        private const string BootstrapDoneKey = "SpaceWhale.HierarchyInspector.ThemesBootstrap.Done";
         // GUID lookup keeps "Open Demo Scene" working whether the package was installed
         // as a .unitypackage (Assets/...) or via UPM (Packages/...).
         private const string DemoSceneGuid = "2980097aef4c4ef44b039166a2f40abc";
@@ -33,7 +37,15 @@ namespace SpaceWhale.HierarchyInspector.Editor
         [InitializeOnLoadMethod]
         private static void TryAutoOpenOnFirstLoad()
         {
-            if (EditorPrefs.GetBool(ShownPrefKey, false)) return;
+            // Two independent first-run tasks live behind the same delayCall:
+            // (1) the theme bootstrap, gated on BootstrapDoneKey ; (2) opening
+            // the welcome window, gated on ShownPrefKey. They are decoupled so
+            // users upgrading from a build that lacked the bootstrap still get
+            // themes copied on first reload despite having dismissed welcome.
+            if (EditorPrefs.GetBool(ShownPrefKey, false)
+                && EditorPrefs.GetBool(BootstrapDoneKey, false))
+                return;
+
             // Defer until the editor is fully booted; opening a window during the
             // initial domain reload is rejected by Unity.
             EditorApplication.delayCall += AutoOpen;
@@ -42,14 +54,20 @@ namespace SpaceWhale.HierarchyInspector.Editor
         private static void AutoOpen()
         {
             EditorApplication.delayCall -= AutoOpen;
-            if (EditorPrefs.GetBool(ShownPrefKey, false)) return;
-            EditorPrefs.SetBool(ShownPrefKey, true);
 
-            // Bring bundled themes into the user's Assets/ folder before showing the
-            // window, so the "Open Theme Settings" button leads to editable assets.
-            BootstrapBundledThemes();
+            // Theme bootstrap runs once across all installs (fresh + upgrade).
+            if (!EditorPrefs.GetBool(BootstrapDoneKey, false))
+            {
+                BootstrapBundledThemes();
+                EditorPrefs.SetBool(BootstrapDoneKey, true);
+            }
 
-            ShowWindow();
+            // Welcome window opens only on first install.
+            if (!EditorPrefs.GetBool(ShownPrefKey, false))
+            {
+                EditorPrefs.SetBool(ShownPrefKey, true);
+                ShowWindow();
+            }
         }
 
         // ─── manual open ────────────────────────────────────────────────────

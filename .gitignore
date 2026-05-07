@@ -63,7 +63,8 @@ sysinfo.txt
 *.apk
 *.aab
 *.app
-# Note: *.unitypackage is intentionally NOT ignored — the distributable package is committed at the repo root.
+# .unitypackage builds ship as GitHub Release assets, not committed to the repo.
+*.unitypackage
 
 # Crashlytics generated file
 crashlytics-build.properties
