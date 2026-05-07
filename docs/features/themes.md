@@ -66,7 +66,7 @@ If none of the bundled themes fit, make your own. Two ways:
 Either way, edit the new theme's settings as you want, then switch back to any other theme later by dragging it into the **Theme Asset** field. You can also duplicate any existing theme asset with `Ctrl+D` to fork its configuration.
 
 {% hint style="info" %}
-**If you installed Hierarchy Inspector via Unity Package Manager** (git URL or OpenUPM), the bundled themes ship inside the package under `Packages/` and are read-only. To customize, create a new theme using either method above ; new themes always land in your project's `Assets/` folder where they are fully editable.
+**If you installed Hierarchy Inspector via Unity Package Manager** (git URL or OpenUPM), the welcome window automatically copies the four bundled themes into `Assets/HierarchyInspector/Themes/` on first import so you can edit them like any other project file. Only the editor and runtime code stays inside the package; the themes themselves live in your project where you have full control.
 {% endhint %}
 
 {% hint style="info" %}

@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System.IO;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -8,13 +9,20 @@ namespace SpaceWhale.HierarchyInspector.Editor
     /// <summary>
     /// Auto-opens once after the asset is first imported. Surfaces the documentation,
     /// the demo scene, and the theme settings so first-time users have a clear path
-    /// instead of having to find the Tools menu themselves.
+    /// instead of having to find the Tools menu themselves. On first open we also
+    /// duplicate the bundled themes from the package into Assets/HierarchyInspector/Themes/
+    /// when running from a UPM install, so users on either install path end up with
+    /// editable theme assets in their project.
     /// </summary>
     internal sealed class HierarchyInspectorWelcome : EditorWindow
     {
         private const string ShownPrefKey = "SpaceWhale.HierarchyInspector.Welcome.Shown";
-        private const string DemoScenePath = "Assets/HierarchyInspector/Demo/DemoScene.unity";
+        // GUID lookup keeps "Open Demo Scene" working whether the package was installed
+        // as a .unitypackage (Assets/...) or via UPM (Packages/...).
+        private const string DemoSceneGuid = "2980097aef4c4ef44b039166a2f40abc";
         private const string PreferencesPath = "Preferences/Hierarchy Inspector";
+        private const string ThemesAssetFolder = "Assets/HierarchyInspector/Themes";
+        private const string DefaultThemeFileName = "HierarchyTheme-Default.asset";
 
         private static GUIStyle s_titleStyle;
         private static GUIStyle s_versionStyle;
@@ -36,6 +44,11 @@ namespace SpaceWhale.HierarchyInspector.Editor
             EditorApplication.delayCall -= AutoOpen;
             if (EditorPrefs.GetBool(ShownPrefKey, false)) return;
             EditorPrefs.SetBool(ShownPrefKey, true);
+
+            // Bring bundled themes into the user's Assets/ folder before showing the
+            // window, so the "Open Theme Settings" button leads to editable assets.
+            BootstrapBundledThemes();
+
             ShowWindow();
         }
 
@@ -127,17 +140,84 @@ namespace SpaceWhale.HierarchyInspector.Editor
 
         private static void OpenDemoScene()
         {
-            if (System.IO.File.Exists(DemoScenePath))
-            {
-                EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
-                EditorSceneManager.OpenScene(DemoScenePath, OpenSceneMode.Single);
-            }
-            else
+            string path = AssetDatabase.GUIDToAssetPath(DemoSceneGuid);
+            if (string.IsNullOrEmpty(path) || !System.IO.File.Exists(path))
             {
                 Debug.LogWarning(
-                    "[Hierarchy Inspector] Demo scene not found at " + DemoScenePath +
-                    ". The asset's folder may have been moved.");
+                    "[Hierarchy Inspector] Demo scene not found. The asset's folder may have been moved.");
+                return;
             }
+
+            EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+            EditorSceneManager.OpenScene(path, OpenSceneMode.Single);
+        }
+
+        // ─── theme bootstrap (UPM install) ───────────────────────────────────
+
+        // Copies the bundled theme .asset files from the package's read-only Themes/
+        // folder into Assets/HierarchyInspector/Themes/ and switches the active theme
+        // to the writable Default copy. No-op for .unitypackage installs (the search
+        // finds nothing under Packages/) and idempotent across runs (existing themes
+        // are never overwritten).
+        private static void BootstrapBundledThemes()
+        {
+            var bundledGuids = AssetDatabase.FindAssets(
+                "t:HierarchyInspectorTheme", new[] { "Packages" });
+
+            if (bundledGuids == null || bundledGuids.Length == 0)
+                return; // .unitypackage install ; themes already in Assets/
+
+            EnsureFolder(ThemesAssetFolder);
+
+            string defaultDstPath = null;
+            foreach (var guid in bundledGuids)
+            {
+                string srcPath = AssetDatabase.GUIDToAssetPath(guid);
+                if (string.IsNullOrEmpty(srcPath)) continue;
+
+                string fileName = Path.GetFileName(srcPath);
+                string dstPath = $"{ThemesAssetFolder}/{fileName}";
+
+                bool alreadyExists = AssetDatabase.LoadAssetAtPath<HierarchyInspectorTheme>(dstPath) != null;
+
+                if (!alreadyExists)
+                {
+                    if (!AssetDatabase.CopyAsset(srcPath, dstPath))
+                    {
+                        Debug.LogWarning(
+                            "[Hierarchy Inspector] Failed to copy bundled theme " + srcPath +
+                            " into " + dstPath + ". Recreate it via " +
+                            "Edit > Preferences > Hierarchy Inspector > Create New Theme.");
+                        continue;
+                    }
+                }
+
+                if (fileName == DefaultThemeFileName)
+                    defaultDstPath = dstPath;
+            }
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            if (!string.IsNullOrEmpty(defaultDstPath))
+            {
+                var defaultCopy = AssetDatabase.LoadAssetAtPath<HierarchyInspectorTheme>(defaultDstPath);
+                if (defaultCopy != null)
+                    HierarchyThemeProvider.SetActive(defaultCopy);
+            }
+        }
+
+        // Recursive folder creation via AssetDatabase so the new folders are picked
+        // up immediately without a full Refresh().
+        private static void EnsureFolder(string assetPath)
+        {
+            if (AssetDatabase.IsValidFolder(assetPath)) return;
+            string parent = Path.GetDirectoryName(assetPath)?.Replace('\\', '/');
+            string leaf = Path.GetFileName(assetPath);
+            if (string.IsNullOrEmpty(parent) || string.IsNullOrEmpty(leaf)) return;
+            EnsureFolder(parent);
+            if (!AssetDatabase.IsValidFolder(assetPath))
+                AssetDatabase.CreateFolder(parent, leaf);
         }
     }
 }
