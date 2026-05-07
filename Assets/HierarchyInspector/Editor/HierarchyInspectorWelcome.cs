@@ -17,10 +17,6 @@ namespace SpaceWhale.HierarchyInspector.Editor
     internal sealed class HierarchyInspectorWelcome : EditorWindow
     {
         private const string ShownPrefKey = "SpaceWhale.HierarchyInspector.Welcome.Shown";
-        // Separate from ShownPrefKey so users upgrading from a build without the
-        // bootstrap (e.g. v1.0.0) still get themes copied on next reload, even
-        // though they have already dismissed the welcome window.
-        private const string BootstrapDoneKey = "SpaceWhale.HierarchyInspector.ThemesBootstrap.Done";
         // GUID lookup keeps "Open Demo Scene" working whether the package was installed
         // as a .unitypackage (Assets/...) or via UPM (Packages/...).
         private const string DemoSceneGuid = "2980097aef4c4ef44b039166a2f40abc";
@@ -37,17 +33,9 @@ namespace SpaceWhale.HierarchyInspector.Editor
         [InitializeOnLoadMethod]
         private static void TryAutoOpenOnFirstLoad()
         {
-            // Two independent first-run tasks live behind the same delayCall:
-            // (1) the theme bootstrap, gated on BootstrapDoneKey ; (2) opening
-            // the welcome window, gated on ShownPrefKey. They are decoupled so
-            // users upgrading from a build that lacked the bootstrap still get
-            // themes copied on first reload despite having dismissed welcome.
-            if (EditorPrefs.GetBool(ShownPrefKey, false)
-                && EditorPrefs.GetBool(BootstrapDoneKey, false))
-                return;
-
-            // Defer until the editor is fully booted; opening a window during the
-            // initial domain reload is rejected by Unity.
+            // Always defer ; AutoOpen self-checks both the theme bootstrap state
+            // (filesystem-driven, not flag-driven, so it is self-healing) and the
+            // welcome-shown flag.
             EditorApplication.delayCall += AutoOpen;
         }
 
@@ -55,12 +43,12 @@ namespace SpaceWhale.HierarchyInspector.Editor
         {
             EditorApplication.delayCall -= AutoOpen;
 
-            // Theme bootstrap runs once across all installs (fresh + upgrade).
-            if (!EditorPrefs.GetBool(BootstrapDoneKey, false))
-            {
+            // Theme bootstrap is gated on the actual project state: if no theme
+            // exists in Assets/, copy the bundled themes from Packages/. This is
+            // self-healing across upgrades and re-installs since it does not rely
+            // on an EditorPrefs flag that could drift out of sync with reality.
+            if (!HasThemeInAssets())
                 BootstrapBundledThemes();
-                EditorPrefs.SetBool(BootstrapDoneKey, true);
-            }
 
             // Welcome window opens only on first install.
             if (!EditorPrefs.GetBool(ShownPrefKey, false))
@@ -68,6 +56,22 @@ namespace SpaceWhale.HierarchyInspector.Editor
                 EditorPrefs.SetBool(ShownPrefKey, true);
                 ShowWindow();
             }
+        }
+
+        private static bool HasThemeInAssets()
+        {
+            var guids = AssetDatabase.FindAssets("t:HierarchyInspectorTheme");
+            if (guids == null) return false;
+            for (int i = 0; i < guids.Length; i++)
+            {
+                string path = AssetDatabase.GUIDToAssetPath(guids[i]);
+                if (!string.IsNullOrEmpty(path)
+                    && path.StartsWith("Assets/", System.StringComparison.Ordinal))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         // ─── manual open ────────────────────────────────────────────────────
@@ -179,20 +183,33 @@ namespace SpaceWhale.HierarchyInspector.Editor
         // are never overwritten).
         private static void BootstrapBundledThemes()
         {
-            var bundledGuids = AssetDatabase.FindAssets(
-                "t:HierarchyInspectorTheme", new[] { "Packages" });
+            // Search the whole project, then keep only assets that live under any
+            // Packages/ subfolder. Passing the bare "Packages" string to FindAssets'
+            // searchInFolders parameter does not actually scope the search ; it
+            // expects concrete folder paths like Packages/com.foo.bar.
+            var allGuids = AssetDatabase.FindAssets("t:HierarchyInspectorTheme");
+            if (allGuids == null || allGuids.Length == 0)
+                return;
 
-            if (bundledGuids == null || bundledGuids.Length == 0)
+            var bundled = new System.Collections.Generic.List<string>();
+            for (int i = 0; i < allGuids.Length; i++)
+            {
+                string p = AssetDatabase.GUIDToAssetPath(allGuids[i]);
+                if (!string.IsNullOrEmpty(p)
+                    && p.StartsWith("Packages/", System.StringComparison.Ordinal))
+                {
+                    bundled.Add(p);
+                }
+            }
+
+            if (bundled.Count == 0)
                 return; // .unitypackage install ; themes already in Assets/
 
             EnsureFolder(ThemesAssetFolder);
 
             string defaultDstPath = null;
-            foreach (var guid in bundledGuids)
+            foreach (var srcPath in bundled)
             {
-                string srcPath = AssetDatabase.GUIDToAssetPath(guid);
-                if (string.IsNullOrEmpty(srcPath)) continue;
-
                 string fileName = Path.GetFileName(srcPath);
                 string dstPath = $"{ThemesAssetFolder}/{fileName}";
 
