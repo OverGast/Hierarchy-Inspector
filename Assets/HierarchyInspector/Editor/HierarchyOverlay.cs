@@ -921,9 +921,6 @@ namespace SpaceWhale.HierarchyInspector.Editor
         {
             if (!T.Enabled) { PollSubscription(); return; }
 
-            // Procedural generation makes hierarchyChanged fire continuously in play mode.
-            if (EditorApplication.isPlaying) return;
-
             var eventType = Event.current.type;
 
             if (eventType == EventType.Layout) { HandleLayoutPass(); return; }
