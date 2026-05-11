@@ -4,6 +4,10 @@ All notable changes to **Hierarchy Inspector** are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project follows [Semantic Versioning](https://semver.org/).
 
+## [1.0.2]: Play-mode rendering fix
+
+- Hierarchy overlay now keeps rendering during play mode. The previous build had an `EditorApplication.isPlaying` early-return in the per-item draw path (a leftover from a heavier parent project) that disabled row visuals, the gear popup, bookmarks, and indicators as soon as the user pressed Play. Animations (fade-in on spawn, rename flash) remain suppressed in play mode to avoid visual noise from spawn-heavy scenes.
+
 ## [1.0.1]: UPM install path
 
 - Added a `package.json` so Hierarchy Inspector can be installed via Unity Package Manager using a git URL (`https://github.com/OverGast/Hierarchy-Inspector.git?path=Assets/HierarchyInspector`).

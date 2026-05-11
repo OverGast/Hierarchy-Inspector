@@ -1,6 +1,6 @@
 {
   "name": "com.spacewhale.hierarchyinspector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Hierarchy Inspector",
   "description": "Editor-only tool that turns Unity's Hierarchy window into a fast, readable, and good-looking workspace. Per-object color and icon overrides, virtualization folders, bookmarks, indicators, and a full theme system. Render-pipeline agnostic with zero runtime cost.",
   "unity": "2022.3",
