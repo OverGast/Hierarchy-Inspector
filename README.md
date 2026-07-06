@@ -36,7 +36,8 @@ Full user documentation is published at [overgast.github.io/spacewhale-docs](htt
 ## Repo layout
 
 - `Assets/HierarchyInspector/` houses the runtime data component, the editor overlay, the theme assets, and the demo scene.
-- `docs/` holds the source markdown for the user documentation, now published at the [docs site](https://overgast.github.io/spacewhale-docs/hierarchy-inspector/).
+
+User documentation lives in its own repository, [spacewhale-docs](https://github.com/OverGast/spacewhale-docs), and is published at the [docs site](https://overgast.github.io/spacewhale-docs/hierarchy-inspector/).
 
 ## Support, feature requests, and bug reports
 
