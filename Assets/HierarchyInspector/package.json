@@ -7,7 +7,7 @@
   "author": {
     "name": "SpaceWhale",
     "email": "spacewhale.assets@gmail.com",
-    "url": "https://space-whale-2.gitbook.io/space-whale-docs"
+    "url": "https://overgast.github.io/spacewhale-docs/"
   },
   "keywords": [
     "hierarchy",
@@ -24,7 +24,7 @@
     "theme",
     "inspector"
   ],
-  "documentationUrl": "https://space-whale-2.gitbook.io/space-whale-docs",
+  "documentationUrl": "https://overgast.github.io/spacewhale-docs/hierarchy-inspector/",
   "changelogUrl": "https://github.com/OverGast/Hierarchy-Inspector/blob/main/CHANGELOG.md",
   "licensesUrl": "https://github.com/OverGast/Hierarchy-Inspector",
   "type": "tool",

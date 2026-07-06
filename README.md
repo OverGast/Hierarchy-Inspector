@@ -4,9 +4,9 @@ A Unity Editor extension that turns the Hierarchy window into a workspace: row v
 
 ## Get the asset
 
-Hierarchy Inspector ships on the **Unity Asset Store**. The package is currently in submission review; the store link will land here once it's live.
+Hierarchy Inspector ships on the **Unity Asset Store**:
 
-> [Buy on the Asset Store →](https://assetstore.unity.com/) *(coming soon)*
+> [Get it on the Asset Store →](https://assetstore.unity.com/packages/tools/utilities/hierarchy-inspector-378440)
 
 A `.unitypackage` is also attached to each [GitHub Release](https://github.com/OverGast/Hierarchy-Inspector/releases) for users who want to evaluate or install outside the Asset Store. Download the latest release, then drag the `.unitypackage` into your project.
 
@@ -31,13 +31,12 @@ Updates can be pulled later by re-opening the package in the manager and clickin
 
 ## Documentation
 
-Full user documentation is published at [space-whale-2.gitbook.io/space-whale-docs](https://space-whale-2.gitbook.io/space-whale-docs). The markdown source is in [`docs/`](docs/).
+Full user documentation is published at [overgast.github.io/spacewhale-docs](https://overgast.github.io/spacewhale-docs/hierarchy-inspector/).
 
 ## Repo layout
 
 - `Assets/HierarchyInspector/` houses the runtime data component, the editor overlay, the theme assets, and the demo scene.
-- `docs/` is the GitBook source (markdown + assets).
-- `.gitbook.yaml` configures the GitBook GitHub Sync.
+- `docs/` holds the source markdown for the user documentation, now published at the [docs site](https://overgast.github.io/spacewhale-docs/hierarchy-inspector/).
 
 ## Support, feature requests, and bug reports
 
