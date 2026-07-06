@@ -2,7 +2,7 @@
 
 The gear popup is where you customize one GameObject (or a multi-selection) without leaving the Hierarchy window. It opens from a small gear icon that appears on each row.
 
-![The gear popup floating over a hierarchy row](../.gitbook/assets/gear-popup/01-gear-popup.png)
+![The gear popup floating over a hierarchy row](../../.gitbook/assets/01-gear-popup.png)
 
 ## Opening it
 
@@ -32,9 +32,9 @@ If the curated set isn't enough, the **Custom Icon** field below it accepts any 
 
 Three action buttons:
 
-- **Virtualized Folder.** Marks this GameObject as a virtualization folder. Folders look like folders in the hierarchy and get stripped at build time. See [Virtualization Folders](folders.md) for the full story. The first time you mark a GameObject as a folder, the popup also assigns the default folder icon and a yellow row color (these stay editable; the auto-assignment is a convenience, not a lock-in).
-- **Bookmark** (the small star button: `☆` empty / `★` filled). Adds this GameObject to its scene's bookmark list. A small star badge appears on the row. Click again to unbookmark. See [Bookmarks](bookmarks.md).
-- **Clear.** Removes all customization (color, icon, notes, folder/bookmark flags) and removes the underlying `HierarchyInspectorData` component from the GameObject.
+* **Virtualized Folder.** Marks this GameObject as a virtualization folder. Folders look like folders in the hierarchy and get stripped at build time. See [Virtualization Folders](folders.md) for the full story. The first time you mark a GameObject as a folder, the popup also assigns the default folder icon and a yellow row color (these stay editable; the auto-assignment is a convenience, not a lock-in).
+* **Bookmark** (the small star button: `☆` empty / `★` filled). Adds this GameObject to its scene's bookmark list. A small star badge appears on the row. Click again to unbookmark. See [Bookmarks](bookmarks.md).
+* **Clear.** Removes all customization (color, icon, notes, folder/bookmark flags) and removes the underlying `HierarchyInspectorData` component from the GameObject.
 
 ### Notes
 

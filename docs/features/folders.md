@@ -2,7 +2,7 @@
 
 Virtualization folders are a way to group GameObjects in the Hierarchy purely for organization. They look like folders, behave like folders, and disappear at build time so they cost nothing in your shipped game.
 
-![Hierarchy with virtualization folders containing several GameObjects](../.gitbook/assets/folders/01-folders-in-hierarchy.png)
+![Hierarchy with virtualization folders containing several GameObjects](../../.gitbook/assets/01-folders-in-hierarchy.png)
 
 ## The problem they solve
 
@@ -64,6 +64,6 @@ Scene Root
 **Don't put scripts on folder GameObjects.** Folders are intended to be empty containers. If you put a script on a folder, that script will be destroyed along with the folder at build time. The included `HierarchyFolderConflictMonitor` will warn you in the Inspector if it detects this case.
 {% endhint %}
 
-- **Folders are intact in play mode.** The strip only runs during a player build (when Unity invokes `IProcessSceneWithReport` with a non-null `BuildReport`). Press Play in the editor and your folder GameObjects stay where they are.
-- **Prefabs as folders work too.** You can mark a prefab instance as a folder; the strip will still process it correctly at build.
-- **Renaming a folder is fine.** The folder's name doesn't affect anything; rename freely.
+* **Folders are intact in play mode.** The strip only runs during a player build (when Unity invokes `IProcessSceneWithReport` with a non-null `BuildReport`). Press Play in the editor and your folder GameObjects stay where they are.
+* **Prefabs as folders work too.** You can mark a prefab instance as a folder; the strip will still process it correctly at build.
+* **Renaming a folder is fine.** The folder's name doesn't affect anything; rename freely.
