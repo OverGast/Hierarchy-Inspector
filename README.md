@@ -22,7 +22,7 @@ You can also install Hierarchy Inspector directly from this repository through U
    ```
 4. To pin to a specific release, append a tag, for example:
    ```
-   https://github.com/OverGast/Hierarchy-Inspector.git?path=Assets/HierarchyInspector#v1.0.2
+   https://github.com/OverGast/Hierarchy-Inspector.git?path=Assets/HierarchyInspector#v1.0.3
    ```
 
 On first import, the welcome window will copy the bundled themes into `Assets/HierarchyInspector/Themes/` so you can edit colors and toggle settings normally; the package's runtime and editor code stay in `Packages/`.

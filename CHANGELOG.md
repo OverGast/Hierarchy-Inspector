@@ -4,6 +4,10 @@ All notable changes to **Hierarchy Inspector** are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project follows [Semantic Versioning](https://semver.org/).
 
+## [1.0.3]: New documentation home
+
+- User documentation moved from GitBook to the free SpaceWhale docs site at [overgast.github.io/spacewhale-docs](https://overgast.github.io/spacewhale-docs/hierarchy-inspector/getting-started/). The in-editor documentation links (the `?` button in the theme inspector and the welcome window's **Open Documentation** button) and the `package.json` `documentationUrl` now open the new Getting Started page.
+
 ## [1.0.2]: Play-mode rendering fix
 
 - Hierarchy overlay now keeps rendering during play mode. The previous build had an `EditorApplication.isPlaying` early-return in the per-item draw path (a leftover from a heavier parent project) that disabled row visuals, the gear popup, bookmarks, and indicators as soon as the user pressed Play. Animations (fade-in on spawn, rename flash) remain suppressed in play mode to avoid visual noise from spawn-heavy scenes.
