@@ -31,13 +31,13 @@ Updates can be pulled later by re-opening the package in the manager and clickin
 
 ## Documentation
 
-Full user documentation is published at [overgast.github.io/spacewhale-docs](https://overgast.github.io/spacewhale-docs/hierarchy-inspector/).
+Full user documentation is published at [overgast.github.io/spacewhale-docs](https://overgast.github.io/spacewhale-docs/hierarchy-inspector/getting-started/).
 
 ## Repo layout
 
 - `Assets/HierarchyInspector/` houses the runtime data component, the editor overlay, the theme assets, and the demo scene.
 
-User documentation lives in its own repository, [spacewhale-docs](https://github.com/OverGast/spacewhale-docs), and is published at the [docs site](https://overgast.github.io/spacewhale-docs/hierarchy-inspector/).
+User documentation lives in its own repository, [spacewhale-docs](https://github.com/OverGast/spacewhale-docs), and is published at the [docs site](https://overgast.github.io/spacewhale-docs/hierarchy-inspector/getting-started/).
 
 ## Support, feature requests, and bug reports
 

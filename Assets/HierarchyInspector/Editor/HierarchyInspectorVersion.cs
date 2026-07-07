@@ -6,7 +6,7 @@ namespace SpaceWhale.HierarchyInspector.Editor
     {
         public const string Version = "1.0.2";
 
-        public const string DocumentationUrl = "https://overgast.github.io/spacewhale-docs/hierarchy-inspector/";
+        public const string DocumentationUrl = "https://overgast.github.io/spacewhale-docs/hierarchy-inspector/getting-started/";
     }
 }
 #endif

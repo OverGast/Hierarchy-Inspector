@@ -6,7 +6,7 @@ A Unity Editor extension that enhances the Hierarchy window with row visuals, pe
 
 Full user documentation, with screenshots, is published at:
 
-**[overgast.github.io/spacewhale-docs](https://overgast.github.io/spacewhale-docs/hierarchy-inspector/)**
+**[overgast.github.io/spacewhale-docs](https://overgast.github.io/spacewhale-docs/hierarchy-inspector/getting-started/)**
 
 The same link is available in-editor:
 
