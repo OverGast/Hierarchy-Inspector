@@ -1,3 +1,5 @@
+**If you like this asset, feel free to leave a star, thank you!**
+
 # Hierarchy Inspector
 
 A Unity Editor extension that turns the Hierarchy window into a workspace: row visuals, per-object styling, virtualization folders, bookmarks, and a style clipboard.
