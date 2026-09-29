@@ -105,7 +105,8 @@ namespace SpaceWhale.HierarchyInspector.Editor
                     && iconRect.Contains(mousePos))
                 {
                     var component = _flatComponentBuffer[bufferBase + i];
-                    if (component is Behaviour behaviour)
+                    // Lifetime check: cached components may have been destroyed since the buffer was built.
+                    if (component is Behaviour behaviour && behaviour)
                     {
                         Undo.RecordObject(component, "Toggle Component");
                         behaviour.enabled = !behaviour.enabled;
@@ -134,7 +135,7 @@ namespace SpaceWhale.HierarchyInspector.Editor
                 }
 
                 var refComponent = _flatComponentBuffer[bufferBase + i];
-                if (refComponent is Behaviour b && !b.enabled)
+                if (refComponent is Behaviour b && b && !b.enabled)
                     drawColor.a *= 0.4f;
 
                 GUI.color = drawColor;
